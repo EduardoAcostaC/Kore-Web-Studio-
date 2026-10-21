@@ -1,0 +1,1118 @@
+<!DOCTYPE html><html class="dark scroll-smooth" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Kore Web Studio | Sitios y Plataformas Web que Enamoran y Multiplican tus Clientes</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: "#080B11",
+              darker: "#04060A",
+              card: "#0E1320",
+              blue: "#0066FF",
+              cyan: "#00D2FF",
+              accent: "#38bdf8",
+              border: "rgba(255, 255, 255, 0.08)",
+              borderHover: "rgba(0, 210, 255, 0.35)",
+            }
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          backgroundImage: {
+            'grid-pattern': "radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px)",
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #07090e;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    
+    .tech-grid {
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+    }
+
+    .glow-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.01) 100%), #0c101b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .glow-card:hover {
+      border-color: rgba(0, 210, 255, 0.35);
+      box-shadow: 0 0 35px -8px rgba(0, 102, 255, 0.28);
+    }
+
+    .shimmer-text {
+      background: linear-gradient(120deg, #ffffff 15%, #93c5fd 55%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .carousel-tab-active {
+      background: linear-gradient(135deg, rgba(0, 102, 255, 0.25) 0%, rgba(0, 210, 255, 0.15) 100%) !important;
+      border-color: rgba(0, 210, 255, 0.6) !important;
+      box-shadow: 0 0 25px rgba(0, 102, 255, 0.35) !important;
+      color: #ffffff !important;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07090e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f293d;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0066ff;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-blue selection:text-white relative min-h-screen">
+<!-- Ambient Lights & Canvas Background -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute inset-0 bg-grid-pattern tech-grid opacity-65"></div>
+<div class="absolute -top-[250px] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-radial from-[#0066ff]/25 via-[#00d2ff]/10 to-transparent blur-[125px] rounded-full"></div>
+<div class="absolute top-[35%] -left-36 w-[550px] h-[550px] bg-gradient-radial from-[#0066ff]/12 via-transparent to-transparent blur-[140px] rounded-full"></div>
+<div class="absolute top-[65%] -right-36 w-[600px] h-[600px] bg-gradient-radial from-[#00d2ff]/12 via-[#0066ff]/8 to-transparent blur-[150px] rounded-full"></div>
+</div>
+<!-- FLOATING NAVBAR -->
+<header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+<div class="w-full max-w-5xl bg-[#0b0f19]/85 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex items-center justify-between transition-all duration-300 hover:border-white/20">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2.5 pl-2 group" href="#">
+<div class="relative w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center p-0.5 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 group-hover:border-brand-cyan/50 transition-colors">
+<img alt="Kore Web Studio" class="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,102,255,0.6)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKGl8fusZknl4uvCHmzkjMADQ08oK4PTGyfq1bemPEBr66RR3aJpClNffMuRSfjUXiT3SRbNHNox-1nmypIuYek60XZFAynnDARsDQwZkGOe9hRJWk_48JbtSYypX-AtRdo2N-_duCUvNJEOPYMkRamzqbHVgilKG3lbw83XULlku7iAzxi5Ma8PCXao93M5GLF8HMNWtT7aItlB4svnZJfzag_XLMmM9xbU5E2Dp1Ty-bj38YWiSSA71PKThyIgIVTZY">
+</div>
+<span class="font-display font-bold text-[15px] tracking-tight text-white group-hover:text-cyan-200 transition-colors">
+          Kore <span class="text-neutral-400 font-normal">Web Studio</span>
+</span>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-6 lg:gap-7 text-[13px] font-medium text-neutral-300">
+<a class="hover:text-white transition-colors" href="#portafolio">Portafolio Interactivo</a>
+<a class="hover:text-white transition-colors" href="#soluciones">Soluciones por Sector</a>
+<a class="hover:text-white transition-colors" href="#casos">Casos de Éxito</a>
+<a class="hover:text-white transition-colors" href="#proceso">Nuestra Metodología</a>
+<a class="hover:text-white transition-colors" href="#contacto">Contacto</a>
+</nav>
+<!-- Action Button -->
+<a class="relative group inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-brand-blue to-[#0099ff] hover:to-brand-cyan shadow-[0_0_20px_rgba(0,102,255,0.45)] hover:shadow-[0_0_25px_rgba(0,210,255,0.7)] transition-all" href="#contacto">
+<span class="">Iniciar Proyecto</span>
+<span class="material-symbols-outlined text-[15px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</div>
+</header>
+<main class="relative z-10 pt-32 lg:pt-36 flex flex-col items-center">
+<!-- 1. HERO SECTION -->
+<section class="w-full max-w-6xl mx-auto px-5 lg:px-8 text-center flex flex-col items-center pt-4 pb-16">
+<!-- Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-neutral-300 text-xs font-medium mb-8 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] hover:border-brand-cyan/40 transition-colors">
+<span class="inline-block w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_10px_#00D2FF] animate-pulse"></span>
+<span class="">Acompañamiento personalizado • Interfaces diseñadas para cautivar</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-7xl tracking-[-0.035em] text-white max-w-5xl leading-[1.1] mb-7">
+        Creamos sitios y plataformas web que <span class="shimmer-text block sm:inline">enamoran a tus visitas y las convierten en clientes fieles.</span>
+</h1>
+<!-- Subtitle -->
+<p class="font-sans text-base sm:text-lg lg:text-xl text-neutral-300 max-w-2xl font-normal leading-relaxed mb-10">
+        Diseño premium y desarrollo a medida para marcas y profesionales que buscan proyectar una imagen de clase mundial, generar confianza inmediata y multiplicar sus resultados.
+      </p>
+<!-- Friendly CTAs -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mb-12">
+<a class="w-full sm:w-auto px-7 py-4 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brand-blue via-[#0080ff] to-brand-cyan shadow-[0_0_30px_rgba(0,102,255,0.5)] hover:shadow-[0_0_40px_rgba(0,210,255,0.7)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2" href="#portafolio">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+<span class="">Ver Proyectos Destacados</span>
+</a>
+<a class="w-full sm:w-auto px-6 py-4 rounded-xl font-medium text-sm text-neutral-200 bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-brand-cyan/40 transition-all flex items-center justify-center gap-2" href="https://wa.me/#" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-emerald-400">chat</span>
+<span class="">Hablar por WhatsApp</span>
+</a>
+</div>
+<!-- Trust Bar: Beneficios Inmediatos -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pt-6 border-t border-white/10 text-left">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+<span class="material-symbols-outlined text-brand-cyan text-2xl">verified_user</span>
+<div>
+<div class="text-white font-semibold text-xs sm:text-sm">Garantía de Satisfacción</div>
+<div class="text-neutral-400 text-[11px]">Aprobación antes de publicar</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+<span class="material-symbols-outlined text-emerald-400 text-2xl">speed</span>
+<div>
+<div class="text-white font-semibold text-xs sm:text-sm">Carga Instantánea</div>
+<div class="text-neutral-400 text-[11px]">Nadie abandona por lentitud</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+<span class="material-symbols-outlined text-purple-400 text-2xl">phone_iphone</span>
+<div>
+<div class="text-white font-semibold text-xs sm:text-sm">100% Mobile First</div>
+<div class="text-neutral-400 text-[11px]">Experiencia perfecta en celular</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+<span class="material-symbols-outlined text-amber-400 text-2xl">headset_mic</span>
+<div>
+<div class="text-white font-semibold text-xs sm:text-sm">Soporte Continuo</div>
+<div class="text-neutral-400 text-[11px]">Nunca te dejamos solo</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. SHOWCASE / CARRUSEL INTERACTIVO DE DEMOSTRACIÓN -->
+<section class="w-full max-w-6xl mx-auto px-5 lg:px-8 py-16" id="portafolio">
+<div class="text-center max-w-3xl mx-auto mb-10">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/25 text-brand-cyan text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+<span class="">SHOWCASE INTERACTIVO DE EXPERIENCIAS</span>
+</div>
+<h2 class="font-display font-bold text-3xl sm:text-5xl text-white tracking-tight mb-4">
+        Mira lo que podemos construir para ti
+      </h2>
+<p class="text-neutral-300 text-sm sm:text-base leading-relaxed">
+        Explora cómo transformamos la presencia digital de marcas turísticas, profesionales de la salud y tiendas online con interfaces modernas y fluidas.
+      </p>
+</div>
+<!-- Project Navigation Tabs -->
+<div class="flex flex-wrap items-center justify-center gap-3 max-w-3xl mx-auto mb-8" id="carousel-tabs">
+<button class="carousel-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border hover:border-brand-cyan/40 flex items-center gap-2 bg-white/5 text-neutral-300 border-white/10" data-slide="0">
+<span class="material-symbols-outlined text-[17px] text-amber-400">travel_explore</span>
+<span class="">Turismo &amp; Reservas</span>
+</button>
+<button class="carousel-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border hover:border-brand-cyan/40 flex items-center gap-2 bg-white/5 text-neutral-300 border-white/10" data-slide="1">
+<span class="material-symbols-outlined text-[17px] text-brand-cyan">medical_services</span>
+<span class="">Salud &amp; Agendamiento</span>
+</button>
+<button class="carousel-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border hover:border-brand-cyan/40 flex items-center gap-2 carousel-tab-active" data-slide="2">
+<span class="material-symbols-outlined text-[17px] text-purple-400">shopping_bag</span>
+<span class="">E-Commerce Boutique</span>
+</button>
+</div>
+<!-- Main Carousel Container -->
+<div class="relative rounded-3xl glow-card p-4 sm:p-7 lg:p-9 border border-white/10 overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.7)]">
+<!-- Carousel Slides Track -->
+<div class="relative min-h-[580px] lg:min-h-[500px]">
+<!-- Slide 1: Xochimilco Mágico -->
+<div class="carousel-slide transition-all duration-500 block opacity-0 hidden" data-index="0">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Visual Mockup Column -->
+<div class="lg:col-span-7">
+<div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-[#090d18] shadow-[0_15px_40px_rgba(0,0,0,0.6)]">
+<!-- Browser top chrome bar -->
+<div class="px-4 py-2.5 bg-[#0b0e17] border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+</div>
+<div class="text-[11px] font-mono text-neutral-400 bg-white/5 px-4 py-0.5 rounded-full border border-white/5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-400">lock</span>
+<span class="">xochimilcomagico.com</span>
+</div>
+<div class="flex items-center gap-1 text-neutral-500">
+<span class="material-symbols-outlined text-[14px]">share</span>
+</div>
+</div>
+<!-- Image container -->
+<div class="relative overflow-hidden aspect-[16/10] bg-[#070a12]">
+<img alt="Xochimilco Mágico - Experiencias y Turismo Cultural" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-K4JVrkRDXFtI0CUsnXstqFkeWKWEnsTyKKFfMUgHrangb6d6qP0PpjBmAWRVAD9Lbq8RxVgTfvZNYrGqygxHJQyx7DtajTT5zjOFT0uq6EI0JgrYnmjqEJwVYKFgwOFi_ua6_UIyLKeI_P29KYDDfrO3JhdqzDGbIqAAOsC82kgWtU2nbHu0vNWovnuoiZ4pnQKNkNXPFBEAtu4urT4YDetEKxEuh7IJGcYMmCHHR1FgznEdQgTGZg">
+<div class="absolute inset-0 bg-gradient-to-t from-[#07090e]/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90">
+<span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-1">
+<span class="material-symbols-outlined text-brand-cyan text-[14px]">check_circle</span>
+                        UI Activa y Optimizada
+                      </span>
+<span class="bg-brand-blue/80 backdrop-blur-md px-3 py-1 rounded-full font-mono text-[11px]">
+                        Turismo &amp; Cultura
+                      </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Content Column -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-5">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-300 text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[15px]">tour</span>
+<span class="">Turismo &amp; Reservas Online</span>
+</div>
+<h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight leading-snug mb-3">
+                    Xochimilco Mágico — Experiencias y Turismo Cultural
+                  </h3>
+<p class="text-neutral-300 text-sm leading-relaxed mb-5">
+                    Plataforma inmersiva con reservas de trajineras, selección de fechas, paquetes guiados y fotografía de alta resolución. Diseñada para enamorar a viajeros locales e internacionales desde el primer segundo.
+                  </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Sistema de Reservas</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Diseño Inmersivo</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Mobile-First</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Alta Velocidad</span>
+</div>
+</div>
+<div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+<a class="px-5 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-brand-blue to-brand-cyan hover:opacity-95 shadow-[0_0_20px_rgba(0,102,255,0.35)] transition-all flex items-center justify-center gap-2" href="#contacto">
+<span class="">Solicitar Proyecto Similar</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="px-4 py-3 rounded-xl font-medium text-xs text-neutral-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center justify-center gap-2" href="#contacto">
+<span class="material-symbols-outlined text-[16px] text-brand-cyan">visibility</span>
+<span class="">Ver Detalles del Proyecto</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 2: Dr. Morales - Cardiología -->
+<div class="carousel-slide transition-all duration-500 opacity-0 hidden" data-index="1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Visual Mockup Column -->
+<div class="lg:col-span-7">
+<div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-[#090d18] shadow-[0_15px_40px_rgba(0,0,0,0.6)]">
+<!-- Browser top chrome bar -->
+<div class="px-4 py-2.5 bg-[#0b0e17] border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+</div>
+<div class="text-[11px] font-mono text-neutral-400 bg-white/5 px-4 py-0.5 rounded-full border border-white/5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-400">lock</span>
+<span class="">drmorales-cardiologia.com</span>
+</div>
+<div class="flex items-center gap-1 text-neutral-500">
+<span class="material-symbols-outlined text-[14px]">share</span>
+</div>
+</div>
+<!-- Image container -->
+<div class="relative overflow-hidden aspect-[16/10] bg-[#070a12]">
+<img alt="Dr. Morales - Cardiología &amp; Salud Integral" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkL3sr2AprtOKICVITNm7vl3K7f193Ga64yLXi2QEio-2eHOjKL7b4pnUOU6Y-75COCxHdZvSpwWvntvTH4emIgt9u6oj3zPokdY1JgeAjZICtVteWHsqxTuaPZlMIOSa1MXBSlHDXE4htFJo_ZGf1M1YEX1hnIGz9u0Oh8mt-INHZJ9gZQQW44t-8S5t4VEpF8axO5G9RcqjUVimtzPxcCR0sxKR0qnZ36kVXLuWbPqTnmOn58q5_EA">
+<div class="absolute inset-0 bg-gradient-to-t from-[#07090e]/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90">
+<span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-1">
+<span class="material-symbols-outlined text-brand-cyan text-[14px]">check_circle</span>
+                        UI Médica Certificada
+                      </span>
+<span class="bg-brand-cyan/80 backdrop-blur-md text-black px-3 py-1 rounded-full font-mono font-semibold text-[11px]">
+                        Salud &amp; Bienestar
+                      </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Content Column -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-5">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/15 border border-brand-cyan/30 text-cyan-300 text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[15px]">health_and_safety</span>
+<span class="">Sitio Web Médico &amp; Agendamiento</span>
+</div>
+<h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight leading-snug mb-3">
+                    Dr. Morales — Cardiología &amp; Salud Integral
+                  </h3>
+<p class="text-neutral-300 text-sm leading-relaxed mb-5">
+                    Diseño sobrio, confiable y empático para profesionales médicos. Integra agenda de citas digital, presentación de especialidades, credenciales médicas y testimonios de pacientes.
+                  </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Agendamiento Online</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Credenciales Clínicas</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Confianza &amp; Empatía</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Atención Inmediata</span>
+</div>
+</div>
+<div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+<a class="px-5 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-brand-blue to-brand-cyan hover:opacity-95 shadow-[0_0_20px_rgba(0,102,255,0.35)] transition-all flex items-center justify-center gap-2" href="#contacto">
+<span class="">Solicitar Proyecto Similar</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="px-4 py-3 rounded-xl font-medium text-xs text-neutral-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center justify-center gap-2" href="#contacto">
+<span class="material-symbols-outlined text-[16px] text-brand-cyan">visibility</span>
+<span class="">Ver Detalles del Proyecto</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 3: Aura Living - E-commerce -->
+<div class="carousel-slide transition-all duration-500 opacity-100" data-index="2">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Visual Mockup Column -->
+<div class="lg:col-span-7">
+<div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-[#090d18] shadow-[0_15px_40px_rgba(0,0,0,0.6)]">
+<!-- Browser top chrome bar -->
+<div class="px-4 py-2.5 bg-[#0b0e17] border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+</div>
+<div class="text-[11px] font-mono text-neutral-400 bg-white/5 px-4 py-0.5 rounded-full border border-white/5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-400">lock</span>
+<span class="">auraliving.store</span>
+</div>
+<div class="flex items-center gap-1 text-neutral-500">
+<span class="material-symbols-outlined text-[14px]">share</span>
+</div>
+</div>
+<!-- Image container -->
+<div class="relative overflow-hidden aspect-[16/10] bg-[#070a12]">
+<img alt="Aura Living - Tienda E-commerce &amp; Lifestyle" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDj9PQMwn_5J3TnrViucJrWF1zWIhhE86jafVVwlvCk4eetafczSkARGDg2JSmO1rxFbquxqTOYfr2ICReuzvKI-zoVXYogpRzgAmU1zbvyU6u1w373JoEthZK17uyWmtcFC-w9RaqfV7KPWOWK7G0j_DTlKBdsg6KLRnDmlfJ5Ctld1mIjBiTe-o3bPhM0Xc3xHzDju44P3pNgL_BRTyOCs5GvSOFRkE3Au9CHZyvMXGs6C8b7kkrCg">
+<div class="absolute inset-0 bg-gradient-to-t from-[#07090e]/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90">
+<span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-1">
+<span class="material-symbols-outlined text-brand-cyan text-[14px]">check_circle</span>
+                        Alta Conversión
+                      </span>
+<span class="bg-purple-600/80 backdrop-blur-md text-white px-3 py-1 rounded-full font-mono text-[11px]">
+                        E-Commerce Boutique
+                      </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Content Column -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-5">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[15px]">storefront</span>
+<span class="">E-Commerce Boutique de Alta Gama</span>
+</div>
+<h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight leading-snug mb-3">
+                    Aura Living — Tienda E-commerce &amp; Lifestyle
+                  </h3>
+<p class="text-neutral-300 text-sm leading-relaxed mb-5">
+                    Tienda online minimalista con catálogo interactivo, carrito dinámico, pagos optimizados y fotografía editorial. Diseñada para elevar el ticket promedio y ofrecer una experiencia de compra sin fricciones.
+                  </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Catálogo Interactivo</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Checkout Rápido</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Experiencia Editorial</span>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-300">Optimización de Conversión</span>
+</div>
+</div>
+<div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+<a class="px-5 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-brand-blue to-brand-cyan hover:opacity-95 shadow-[0_0_20px_rgba(0,102,255,0.35)] transition-all flex items-center justify-center gap-2" href="#contacto">
+<span class="">Solicitar Proyecto Similar</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel Controls Footer -->
+<div class="flex items-center justify-between pt-6 border-t border-white/10 mt-4">
+<!-- Dots indicator -->
+<div class="flex items-center gap-2" id="carousel-dots">
+<button class="w-3 h-3 rounded-full bg-white/20 transition-all duration-300 hover:bg-white/50" data-slide="0"></button>
+<button class="w-3 h-3 rounded-full bg-white/20 transition-all duration-300 hover:bg-white/50" data-slide="1"></button>
+<button class="w-7 h-3 rounded-full bg-brand-cyan transition-all duration-300 shadow-[0_0_10px_#00D2FF]" data-slide="2"></button>
+</div>
+<!-- Arrow Buttons -->
+<div class="flex items-center gap-3">
+<button class="p-2.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white transition-all flex items-center justify-center" id="carousel-prev" title="Proyecto anterior">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<button class="p-2.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white transition-all flex items-center justify-center" id="carousel-next" title="Proyecto siguiente">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SWITCHER DE SOLUCIONES POR TIPO DE NEGOCIO -->
+<section class="w-full max-w-6xl mx-auto px-5 lg:px-8 py-20" id="soluciones">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[15px]">category</span>
+<span class="">SOLUCIONES ADAPTADAS</span>
+</div>
+<h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight mb-3">
+          ¿Cuál es tu tipo de negocio?
+        </h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+          Haz clic en tu industria para ver exactamente qué problema resolvemos y qué beneficios tangibles obtendrás.
+        </p>
+</div>
+<!-- Segment Tabs -->
+<div class="flex flex-wrap items-center justify-center gap-2.5 max-w-3xl mx-auto mb-8" id="segment-tabs">
+<button class="segment-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brand-blue text-white shadow-[0_0_20px_rgba(0,102,255,0.4)]" data-target="segment-startups">
+          Startups &amp; SaaS
+        </button>
+<button class="segment-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white/5 text-neutral-300 border border-white/10 hover:border-white/30" data-target="segment-locales">
+          Negocios Locales &amp; Servicios
+        </button>
+<button class="segment-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white/5 text-neutral-300 border border-white/10 hover:border-white/30" data-target="segment-ecommerce">
+          Tiendas Online &amp; Marcas
+        </button>
+<button class="segment-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white/5 text-neutral-300 border border-white/10 hover:border-white/30" data-target="segment-consultores">
+          Profesionales &amp; Consultores
+        </button>
+</div>
+<!-- Dynamic Content Card -->
+<div class="rounded-3xl glow-card p-6 sm:p-10 border border-white/10">
+<!-- Panel 1: Startups & SaaS -->
+<div class="segment-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="segment-startups">
+<div class="lg:col-span-7 space-y-4">
+<span class="text-xs font-mono text-brand-cyan uppercase tracking-wider">Para Startups &amp; Proyectos Digitales</span>
+<h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
+              Diseño de clase Silicon Valley para enamorar a clientes e inversionistas
+            </h3>
+<p class="text-neutral-300 text-sm leading-relaxed">
+<strong>El reto habitual:</strong> Tienes una idea o software brillante, pero tu página web actual no transmite solidez y los usuarios abandonan antes de comprender tu propuesta de valor.
+            </p>
+<div class="space-y-2 pt-2">
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Arquitectura estética moderna con micro-interacciones que generan confianza instantánea.</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Optimización para métricas de retención y registro de usuarios en menos de 3 clics.</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Integración con Analytics, CRMs y flujos de onboarding directo.</span>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan hover:text-white transition-colors" href="#contacto">
+<span class="">Comenzar con mi Startup</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-[#070b14] p-5 rounded-2xl border border-white/5 space-y-4">
+<div class="text-xs font-mono text-neutral-400">IMPACTO EN TU CRECIMIENTO</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Tasa de Demo Requests</span>
+<span class="text-emerald-400 font-bold font-mono text-sm">+180% alza</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Percepción de Marca</span>
+<span class="text-brand-cyan font-bold font-mono text-sm">Enterprise Tier</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Tiempo de Entrega</span>
+<span class="text-white font-bold font-mono text-sm">2 a 3 Semanas</span>
+</div>
+</div>
+</div>
+<!-- Panel 2: Negocios Locales (Hidden initially) -->
+<div class="segment-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="segment-locales">
+<div class="lg:col-span-7 space-y-4">
+<span class="text-xs font-mono text-emerald-400 uppercase tracking-wider">Para Negocios Locales &amp; Empresas de Servicios</span>
+<h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
+              Haz que tu teléfono y WhatsApp no paren de recibir nuevos clientes
+            </h3>
+<p class="text-neutral-300 text-sm leading-relaxed">
+<strong>El reto habitual:</strong> Dependes del boca a boca o de redes sociales donde los clientes preguntan y desaparecen. Tu negocio necesita máxima autoridad en Google.
+            </p>
+<div class="space-y-2 pt-2">
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Botones de WhatsApp estratégicos y llamados a la acción claros en cada pantalla.</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Configuración de Google Maps, SEO Local y catálogo visual de tus servicios reales.</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Formularios rápidos que envían alertas directas a tu celular en tiempo real.</span>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-white transition-colors" href="#contacto">
+<span class="">Multiplicar clientes locales</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-[#070b14] p-5 rounded-2xl border border-white/5 space-y-4">
+<div class="text-xs font-mono text-neutral-400">IMPACTO EN TU CRECIMIENTO</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Consultas por WhatsApp</span>
+<span class="text-emerald-400 font-bold font-mono text-sm">+230% semanales</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Aparición en Google</span>
+<span class="text-brand-cyan font-bold font-mono text-sm">Top 3 en tu zona</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Tiempo de Entrega</span>
+<span class="text-white font-bold font-mono text-sm">1 a 2 Semanas</span>
+</div>
+</div>
+</div>
+<!-- Panel 3: Ecommerce (Hidden) -->
+<div class="segment-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="segment-ecommerce">
+<div class="lg:col-span-7 space-y-4">
+<span class="text-xs font-mono text-purple-400 uppercase tracking-wider">Para Tiendas Online &amp; Marcas de Consumo</span>
+<h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
+              Una experiencia de compra veloz donde comprar es un placer
+            </h3>
+<p class="text-neutral-300 text-sm leading-relaxed">
+<strong>El reto habitual:</strong> Las tiendas lentas sufren un alto abandono de carritos. Los compradores necesitan una navegación clara, estética refinada y máxima seguridad.
+            </p>
+<div class="space-y-2 pt-2">
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Checkout ultra simplificado en un solo paso (menos fricción = más pedidos completados).</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Carga de catálogo fotográfico instantánea sin retrasos en smartphone.</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Integración de pagos seguros y gestión de stock sincronizada.</span>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-white transition-colors" href="#contacto">
+<span class="">Escalar mi tienda online</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-[#070b14] p-5 rounded-2xl border border-white/5 space-y-4">
+<div class="text-xs font-mono text-neutral-400">IMPACTO EN TU CRECIMIENTO</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Reducción de Carrito Caído</span>
+<span class="text-emerald-400 font-bold font-mono text-sm">-45% abandono</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Satisfacción de Compra</span>
+<span class="text-brand-cyan font-bold font-mono text-sm">98.4% positiva</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Tiempo de Entrega</span>
+<span class="text-white font-bold font-mono text-sm">3 a 4 Semanas</span>
+</div>
+</div>
+</div>
+<!-- Panel 4: Consultores (Hidden) -->
+<div class="segment-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="segment-consultores">
+<div class="lg:col-span-7 space-y-4">
+<span class="text-xs font-mono text-amber-400 uppercase tracking-wider">Para Profesionales, Asesores &amp; Consultores</span>
+<h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
+              Posiciónate como el referente número uno de tu especialidad
+            </h3>
+<p class="text-neutral-300 text-sm leading-relaxed">
+<strong>El reto habitual:</strong> Tu presencia digital actual no refleja tu verdadera trayectoria y calibre profesional, lo que dificulta que clientes de alto perfil confíen en ti.
+            </p>
+<div class="space-y-2 pt-2">
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Diseño que transmite máxima autoridad, casos de estudio y testimonios impecables.</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Agenda interactiva de citas sincronizada con tu calendario en tiempo real.</span>
+</div>
+<div class="flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+<span class="">Filtro de prospectos calificados para que sólo hables con personas comprometidas.</span>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-white transition-colors" href="#contacto">
+<span class="">Construir mi marca de autoridad</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-[#070b14] p-5 rounded-2xl border border-white/5 space-y-4">
+<div class="text-xs font-mono text-neutral-400">IMPACTO EN TU CRECIMIENTO</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Percepción Profesional</span>
+<span class="text-emerald-400 font-bold font-mono text-sm">Top Referente</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Reuniones Confirmadas</span>
+<span class="text-brand-cyan font-bold font-mono text-sm">Automáticas</span>
+</div>
+<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between">
+<span class="text-xs text-neutral-300">Tiempo de Entrega</span>
+<span class="text-white font-bold font-mono text-sm">1 a 2 Semanas</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. GALERÍA VISUAL DE TRANSFORMACIÓN / CASOS DE ÉXITO -->
+<section class="w-full max-w-6xl mx-auto px-5 lg:px-8 py-20" id="casos">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[15px]">trending_up</span>
+<span class="">CASOS DE ÉXITO &amp; RESULTADOS</span>
+</div>
+<h2 class="font-display font-bold text-3xl sm:text-5xl text-white tracking-tight mb-4">
+          Marcas que multiplicaron su impacto con Kore
+        </h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+          No creamos páginas de adorno. Diseñamos plataformas que conectan genuinamente con tu audiencia y generan resultados constantes.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="rounded-2xl glow-card p-6 flex flex-col justify-between group">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-[15px]">trending_up</span>
+<span class="">+210% Consultas Calificadas</span>
+</div>
+<div class="rounded-xl bg-[#060810] border border-white/10 p-4 mb-5 relative overflow-hidden">
+<div class="h-28 bg-gradient-to-tr from-brand-blue/20 to-brand-cyan/10 rounded-lg flex flex-col justify-center items-center text-center p-3">
+<span class="text-white font-display font-bold text-base">AuraFin Consulting</span>
+<span class="text-neutral-400 text-xs mt-1">Servicios Financieros Corporativos</span>
+<span class="mt-2 text-[11px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-mono">De 8 a 26 prospectos/semana</span>
+</div>
+</div>
+<h3 class="font-display font-bold text-xl text-white mb-2 group-hover:text-brand-cyan transition-colors">
+              Rediseño Corporativo de Alta Autoridad
+            </h3>
+<p class="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-4">
+              Pasaron de un sitio web desactualizado a un portal corporativo con agenda directa, elevando la confianza de clientes internacionales.
+            </p>
+</div>
+<div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-neutral-400">
+<span class="">Cliente: Martín A. Navarro</span>
+<a class="text-brand-cyan font-medium hover:underline" href="#contacto">Conversar sobre mi caso →</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-2xl glow-card p-6 flex flex-col justify-between group">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-[15px]">bolt</span>
+<span class="">+140% Conversión Inmediata</span>
+</div>
+<div class="rounded-xl bg-[#060810] border border-white/10 p-4 mb-5 relative overflow-hidden">
+<div class="h-28 bg-gradient-to-tr from-purple-500/20 to-brand-blue/10 rounded-lg flex flex-col justify-center items-center text-center p-3">
+<span class="text-white font-display font-bold text-base">MetrixIQ Cloud</span>
+<span class="text-neutral-400 text-xs mt-1">Plataforma SaaS en Crecimiento</span>
+<span class="mt-2 text-[11px] bg-brand-cyan/20 text-cyan-300 px-2 py-0.5 rounded-full font-mono">Pruebas activas x2.4</span>
+</div>
+</div>
+<h3 class="font-display font-bold text-xl text-white mb-2 group-hover:text-brand-cyan transition-colors">
+              Landing Page de Registro Sin Fricción
+            </h3>
+<p class="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-4">
+              Optimizamos la explicación de su propuesta y simplificamos el formulario a solo 2 campos con carga en menos de 0.5 segundos en teléfonos móviles.
+            </p>
+</div>
+<div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-neutral-400">
+<span class="">Cliente: Javier Lozano</span>
+<a class="text-brand-cyan font-medium hover:underline" href="#contacto">Conversar sobre mi caso →</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-2xl glow-card p-6 flex flex-col justify-between group">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-[15px]">shopping_cart_checkout</span>
+<span class="">Máxima Retención y Fidelidad</span>
+</div>
+<div class="rounded-xl bg-[#060810] border border-white/10 p-4 mb-5 relative overflow-hidden">
+<div class="h-28 bg-gradient-to-tr from-emerald-500/20 to-brand-cyan/10 rounded-lg flex flex-col justify-center items-center text-center p-3">
+<span class="text-white font-display font-bold text-base">Nordic Home Store</span>
+<span class="text-neutral-400 text-xs mt-1">E-Commerce de Muebles &amp; Deco</span>
+<span class="mt-2 text-[11px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-mono">-50% rebote en checkout</span>
+</div>
+</div>
+<h3 class="font-display font-bold text-xl text-white mb-2 group-hover:text-brand-cyan transition-colors">
+              E-Commerce Rápido y Fluido
+            </h3>
+<p class="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-4">
+              Reemplazo total de su antigua tienda. Implementamos diseño visual de revista, navegación intuitiva y una experiencia de usuario sumamente satisfactoria.
+            </p>
+</div>
+<div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-neutral-400">
+<span class="">Cliente: Valeria Restrepo</span>
+<a class="text-brand-cyan font-medium hover:underline" href="#contacto">Conversar sobre mi caso →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. PROCESO CLARO Y SIN DOLOR DE CABEZA -->
+<section class="w-full max-w-6xl mx-auto px-5 lg:px-8 py-20" id="proceso">
+<div class="rounded-3xl bg-gradient-to-b from-[#0b0f19] to-[#07090e] border border-white/10 p-6 sm:p-12">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span class="">TRANQUILIDAD TOTAL</span>
+</div>
+<h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight mb-3">
+            Cómo trabajamos contigo: simple y sin complicaciones
+          </h2>
+<p class="text-neutral-400 text-sm leading-relaxed">
+            Olvídate de procesos enredados o desaparecer semanas sin dar respuestas. Con Kore tienes comunicación directa y total claridad en cada etapa.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+<!-- Step 1 -->
+<div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 relative">
+<div class="w-10 h-10 rounded-xl bg-brand-blue/20 text-brand-cyan font-display font-bold flex items-center justify-center text-sm mb-4">
+              01
+            </div>
+<h3 class="font-display font-bold text-white text-base mb-2">Charla Inicial &amp; Estrategia</h3>
+<p class="text-neutral-400 text-xs sm:text-sm leading-relaxed">
+              Escuchamos a fondo tu visión, objetivos de marca y definimos la estructura perfecta para tu cliente ideal.
+            </p>
+</div>
+<!-- Step 2 -->
+<div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 relative">
+<div class="w-10 h-10 rounded-xl bg-brand-cyan/20 text-brand-cyan font-display font-bold flex items-center justify-center text-sm mb-4">
+              02
+            </div>
+<h3 class="font-display font-bold text-white text-base mb-2">Prototipo Visual a Medida</h3>
+<p class="text-neutral-400 text-xs sm:text-sm leading-relaxed">
+              Te presentamos el diseño interactivo completo. Puedes revisarlo, sugerir ajustes y aprobarlo antes de programar una sola línea.
+            </p>
+</div>
+<!-- Step 3 -->
+<div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 relative">
+<div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-300 font-display font-bold flex items-center justify-center text-sm mb-4">
+              03
+            </div>
+<h3 class="font-display font-bold text-white text-base mb-2">Desarrollo y Optimización</h3>
+<p class="text-neutral-400 text-xs sm:text-sm leading-relaxed">
+              Construimos tu sitio con velocidad ultra rápida, llamadas a la acción claras y adaptación perfecta para celulares.
+            </p>
+</div>
+<!-- Step 4 -->
+<div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 relative">
+<div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 font-display font-bold flex items-center justify-center text-sm mb-4">
+              04
+            </div>
+<h3 class="font-display font-bold text-white text-base mb-2">Lanzamiento &amp; Soporte</h3>
+<p class="text-neutral-400 text-xs sm:text-sm leading-relaxed">
+              Conectamos tu dominio, capacitamos a tu equipo para gestionar contenidos y te acompañamos con soporte continuo.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. TESTIMONIOS -->
+<section class="w-full max-w-6xl mx-auto px-5 lg:px-8 py-16" id="testimonios">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight mb-3">
+          Lo que dicen quienes ya trabajan con nosotros
+        </h2>
+<p class="text-neutral-400 text-sm">
+          Relaciones a largo plazo basadas en confianza, atención cercana y crecimiento mutuo.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="rounded-2xl glow-card p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-400 mb-3">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<p class="text-neutral-200 text-sm leading-relaxed mb-6">
+              "Triplicamos las consultas desde el celular en el primer mes. Por fin nuestra empresa proyecta el profesionalismo y prestigio que realmente tenemos."
+            </p>
+</div>
+<div class="pt-4 border-t border-white/5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-blue to-brand-cyan flex items-center justify-center font-bold text-white text-xs">
+              MA
+            </div>
+<div>
+<div class="text-white font-semibold text-xs sm:text-sm">Martín A. Navarro</div>
+<div class="text-neutral-400 text-[11px]">Director @ AuraFin</div>
+</div>
+</div>
+</div>
+<div class="rounded-2xl glow-card p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-400 mb-3">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<p class="text-neutral-200 text-sm leading-relaxed mb-6">
+              "Trabajar con Kore fue un alivio total. Cumplieron con los plazos exactos y la velocidad de la web es instantánea. Nuestros clientes lo notaron de inmediato."
+            </p>
+</div>
+<div class="pt-4 border-t border-white/5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-500 to-brand-blue flex items-center justify-center font-bold text-white text-xs">
+              VR
+            </div>
+<div>
+<div class="text-white font-semibold text-xs sm:text-sm">Valeria Restrepo</div>
+<div class="text-neutral-400 text-[11px]">Co-founder @ Nordic Home</div>
+</div>
+</div>
+</div>
+<div class="rounded-2xl glow-card p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-400 mb-3">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<p class="text-neutral-200 text-sm leading-relaxed mb-6">
+              "No son una agencia impersonal que te olvida tras la entrega. El acompañamiento y los consejos de diseño nos permitieron generar confianza con socios clave."
+            </p>
+</div>
+<div class="pt-4 border-t border-white/5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-400 to-emerald-400 flex items-center justify-center font-bold text-[#07090e] text-xs">
+              JL
+            </div>
+<div>
+<div class="text-white font-semibold text-xs sm:text-sm">Javier Lozano</div>
+<div class="text-neutral-400 text-[11px]">Fundador @ MetrixIQ</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CONTACTO CÁLIDO Y ASESORÍA GRATUITA -->
+<section class="w-full max-w-6xl mx-auto px-5 lg:px-8 py-20 pb-28" id="contacto">
+<div class="rounded-3xl glow-card p-6 sm:p-10 lg:p-14 relative overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+<div class="absolute top-0 right-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start relative z-10">
+<!-- Col Izquierda: Asesoría y Canales Cálidos -->
+<div class="lg:col-span-5 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/25 text-brand-cyan text-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="">Disponibilidad actual para nuevos proyectos</span>
+</div>
+<h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+              Hablemos de tu idea y te asesoramos sin costo ni compromiso.
+            </h2>
+<p class="text-neutral-300 text-sm leading-relaxed">
+              ¿No sabes exactamente qué tipo de web o plataforma necesita tu marca? Conversemos 15 minutos, analizamos tu situación actual y te damos una recomendación honesta.
+            </p>
+<!-- Canal WhatsApp Destacado -->
+<a class="group p-4 rounded-2xl bg-gradient-to-r from-emerald-500/15 to-emerald-600/5 border border-emerald-500/30 hover:border-emerald-400 flex items-center justify-between transition-all shadow-[0_0_25px_rgba(16,185,129,0.15)]" href="https://wa.me/#" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+</div>
+<div>
+<div class="text-white font-bold text-sm group-hover:text-emerald-300 transition-colors">Hablar directo por WhatsApp</div>
+<div class="text-emerald-400 text-xs">Respuesta promedio en menos de 15 minutos</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-white text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<!-- Canal Correo -->
+<a class="p-4 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-brand-blue/50 flex items-center justify-between transition-all" href="mailto:contacto@korewebstudio.com">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-brand-blue/15 text-brand-cyan flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div>
+<div class="text-white font-medium text-xs sm:text-sm">contacto@korewebstudio.com</div>
+<div class="text-neutral-400 text-xs">Para propuestas o consultas de alianzas</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-neutral-400 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Col Derecha: Formulario Humano y Simplificado -->
+<div class="lg:col-span-7 bg-[#070b14]/90 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-xl">
+<h3 class="font-display font-bold text-lg text-white mb-1">Envíanos un mensaje</h3>
+<p class="text-neutral-400 text-xs mb-5">Te responderemos hoy mismo para coordinar una llamada o responder tus dudas.</p>
+<form class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('contact-success').classList.remove('hidden');">
+<div>
+<label class="block text-xs font-semibold text-neutral-300 mb-1.5" for="c-name">Tu Nombre o Nombre de tu Marca *</label>
+<input class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan transition-colors" id="c-name" placeholder="Ej. Carlos Rodríguez o MiMarca" required="" type="text">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-neutral-300 mb-1.5" for="c-contact">WhatsApp o Teléfono *</label>
+<input class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan transition-colors" id="c-contact" placeholder="+54 9 11 1234-5678" required="" type="text">
+</div>
+<div>
+<label class="block text-xs font-semibold text-neutral-300 mb-1.5" for="c-email">Correo Electrónico</label>
+<input class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan transition-colors" id="c-email" placeholder="carlos@empresa.com" type="email">
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-neutral-300 mb-1.5" for="c-goal">¿Qué buscas lograr con tu sitio web? *</label>
+<textarea class="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan transition-colors resize-none" id="c-goal" placeholder="Cuéntanos sobre tu proyecto: ¿Buscas rediseñar tu web actual, crear una tienda, o un sitio profesional con reservas?" required="" rows="3"></textarea>
+</div>
+<button class="w-full py-3.5 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_25px_rgba(0,102,255,0.4)] hover:shadow-[0_0_35px_rgba(0,210,255,0.6)] hover:opacity-95 transition-all flex items-center justify-center gap-2" type="submit">
+<span class="">Solicitar Asesoría Gratuita</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<div class="hidden p-3.5 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 text-center" id="contact-success">
+<span class="text-xs text-brand-cyan font-medium">
+                  ✓ ¡Mensaje recibido! Nos comunicaremos contigo en breve para asesorarte y comenzar tu proyecto.
+                </span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="w-full border-t border-white/5 bg-[#05070d] relative z-10 py-10">
+<div class="max-w-6xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded overflow-hidden flex items-center justify-center">
+<img alt="Kore Web Studio" class="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(0,102,255,0.7)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKGl8fusZknl4uvCHmzkjMADQ08oK4PTGyfq1bemPEBr66RR3aJpClNffMuRSfjUXiT3SRbNHNox-1nmypIuYek60XZFAynnDARsDQwZkGOe9hRJWk_48JbtSYypX-AtRdo2N-_duCUvNJEOPYMkRamzqbHVgilKG3lbw83XULlku7iAzxi5Ma8PCXao93M5GLF8HMNWtT7aItlB4svnZJfzag_XLMmM9xbU5E2Dp1Ty-bj38YWiSSA71PKThyIgIVTZY">
+</div>
+<div>
+<span class="font-display font-bold text-sm text-white">Kore Web Studio</span>
+<span class="text-xs text-neutral-400 ml-2">Diseño Web Premium &amp; Soluciones de Crecimiento</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-5 text-xs text-neutral-400">
+<a class="hover:text-white transition-colors" href="#portafolio">Portafolio</a>
+<a class="hover:text-white transition-colors" href="#soluciones">Soluciones por Sector</a>
+<a class="hover:text-white transition-colors" href="#casos">Casos de Éxito</a>
+<a class="hover:text-white transition-colors" href="#proceso">Cómo Trabajamos</a>
+<a class="hover:text-white transition-colors" href="#contacto">Contacto</a>
+</div>
+<div class="text-xs text-neutral-400 font-mono">
+        © 2025 Kore Web Studio. Hecho para hacer crecer tu marca.
+      </div>
+</div>
+</footer>
+<!-- SCRIPT PARA INTERACCIONES EN VIVO -->
+<script>
+    // 1. CARRUSEL INTERACTIVO DE DEMOSTRACIÓN (SHOWCASE)
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const carouselTabs = document.querySelectorAll('.carousel-tab-btn');
+    const carouselDots = document.querySelectorAll('#carousel-dots button');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+
+    let currentSlide = 0;
+    const totalSlides = carouselSlides.length;
+
+    function goToSlide(index) {
+      if (index < 0) {
+        currentSlide = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+
+      // Update slides visibility
+      carouselSlides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.remove('hidden');
+          setTimeout(() => {
+            slide.classList.remove('opacity-0');
+            slide.classList.add('opacity-100');
+          }, 20);
+        } else {
+          slide.classList.remove('opacity-100');
+          slide.classList.add('opacity-0');
+          slide.classList.add('hidden');
+        }
+      });
+
+      // Update Tab styling
+      carouselTabs.forEach((tab, idx) => {
+        if (idx === currentSlide) {
+          tab.classList.add('carousel-tab-active');
+          tab.classList.remove('bg-white/5', 'text-neutral-300', 'border-white/10');
+        } else {
+          tab.classList.remove('carousel-tab-active');
+          tab.classList.add('bg-white/5', 'text-neutral-300', 'border-white/10');
+        }
+      });
+
+      // Update Dots styling
+      carouselDots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.className = 'w-7 h-3 rounded-full bg-brand-cyan transition-all duration-300 shadow-[0_0_10px_#00D2FF]';
+        } else {
+          dot.className = 'w-3 h-3 rounded-full bg-white/20 transition-all duration-300 hover:bg-white/50';
+        }
+      });
+    }
+
+    if (carouselTabs.length > 0) {
+      carouselTabs.forEach((tab, idx) => {
+        tab.addEventListener('click', () => goToSlide(idx));
+      });
+    }
+
+    if (carouselDots.length > 0) {
+      carouselDots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => goToSlide(idx));
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+    }
+
+    // Inicializar slide inicial
+    goToSlide(0);
+
+    // 2. SWITCHER DE SOLUCIONES POR TIPO DE NEGOCIO
+    const segmentButtons = document.querySelectorAll('.segment-btn');
+    const segmentPanels = document.querySelectorAll('.segment-panel');
+
+    segmentButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        segmentButtons.forEach(b => {
+          b.classList.remove('bg-brand-blue', 'text-white', 'shadow-[0_0_20px_rgba(0,102,255,0.4)]');
+          b.classList.add('bg-white/5', 'text-neutral-300', 'border', 'border-white/10');
+        });
+        btn.classList.add('bg-brand-blue', 'text-white', 'shadow-[0_0_20px_rgba(0,102,255,0.4)]');
+        btn.classList.remove('bg-white/5', 'text-neutral-300', 'border', 'border-white/10');
+
+        const targetId = btn.getAttribute('data-target');
+        segmentPanels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+
+</body></html>
