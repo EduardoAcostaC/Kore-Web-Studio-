@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="absolute inset-x-12 top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none" />
 
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 pl-1 group">
+        <a href="#" className="flex items-center gap-3 pl-1 group flex-shrink-0">
           <div className="relative w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center p-1 bg-gradient-to-b from-white/10 to-white/[0.02] border border-white/15 shadow-[0_0_15px_rgba(0,102,255,0.4)] group-hover:border-brand-cyan/60 group-hover:shadow-[0_0_24px_rgba(0,210,255,0.7)] transition-all duration-300">
             <Image
               src="/kore-icon.png"
@@ -33,18 +33,9 @@ export default function Navbar() {
               className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,102,255,0.8)]"
             />
           </div>
-          <div className="flex items-center gap-1.5">
-            <span className="font-display font-extrabold text-[15px] sm:text-base tracking-tight text-white group-hover:text-cyan-200 transition-colors">
-              Kore
-            </span>
-            <span className="text-[12px] sm:text-[13px] text-neutral-400 font-medium tracking-tight">
-              Web Studio
-            </span>
-            <span className="hidden xl:inline-flex items-center gap-1 ml-1.5 px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-[10px] text-cyan-300 font-mono tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              ONLINE
-            </span>
-          </div>
+          <span className="font-display font-bold text-[15px] sm:text-base tracking-tight text-white whitespace-nowrap group-hover:text-cyan-100 transition-colors">
+            Kore <span className="text-neutral-400 font-normal text-sm">Web Studio</span>
+          </span>
         </a>
 
         {/* Desktop Navigation Links */}

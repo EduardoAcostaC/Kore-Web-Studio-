@@ -185,7 +185,7 @@ export default function Footer() {
         {/* Bottom Sub-Footer Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-xs text-neutral-500 text-center md:text-left">
-            © {new Date().getFullYear()} Kore Web Studio. Todos los derechos reservados.
+            © 2025 Kore Web Studio. Todos los derechos reservados.
             Hecho para hacer crecer tu marca.
           </div>
 
