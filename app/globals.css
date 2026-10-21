@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-dark: #080B11;
+  --color-brand-darker: #04060A;
+  --color-brand-card: #0E1320;
+  --color-brand-blue: #0066FF;
+  --color-brand-cyan: #00D2FF;
+  --color-brand-accent: #38bdf8;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+  --color-brand-borderHover: rgba(0, 210, 255, 0.35);
+
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #07090e;
+  --foreground: #e2e8f0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #07090e;
+  color: #e2e8f0;
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+.tech-grid {
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 60%, transparent 100%);
+}
+
+.glow-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.01) 100%), #0c101b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  border-color: rgba(0, 210, 255, 0.35);
+  box-shadow: 0 0 35px -8px rgba(0, 102, 255, 0.28);
+}
+
+.shimmer-text {
+  background: linear-gradient(120deg, #ffffff 15%, #93c5fd 55%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.carousel-tab-active {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.25) 0%, rgba(0, 210, 255, 0.15) 100%) !important;
+  border-color: rgba(0, 210, 255, 0.6) !important;
+  box-shadow: 0 0 25px rgba(0, 102, 255, 0.35) !important;
+  color: #ffffff !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f293d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0066ff;
 }
