@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Mail, Send, CheckCircle2, ArrowRight } from "lucide-react";
+import { MessageCircle, Send, CheckCircle2, ArrowRight, ShieldCheck, Clock, Sparkles } from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -71,26 +71,27 @@ export default function ContactSection() {
               <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Email Channel */}
-            <a
-              href="mailto:contacto@korewebstudio.com"
-              className="p-4 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-brand-blue/50 flex items-center justify-between transition-all"
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-brand-blue/15 text-brand-cyan flex items-center justify-center">
-                  <Mail className="w-5 h-5" />
+            {/* Key Guarantees */}
+            <div className="pt-2 space-y-3">
+              <div className="flex items-center gap-3 text-xs text-neutral-300">
+                <div className="w-6 h-6 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center flex-shrink-0 text-brand-cyan">
+                  <Clock className="w-3.5 h-3.5" />
                 </div>
-                <div>
-                  <div className="text-white font-medium text-xs sm:text-sm">
-                    contacto@korewebstudio.com
-                  </div>
-                  <div className="text-neutral-400 text-xs">
-                    Para propuestas o consultas de alianzas
-                  </div>
-                </div>
+                <span>Respuesta en menos de 15 minutos en horario hábil</span>
               </div>
-              <ArrowRight className="w-4 h-4 text-neutral-400" />
-            </a>
+              <div className="flex items-center gap-3 text-xs text-neutral-300">
+                <div className="w-6 h-6 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 text-emerald-400">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <span>Diagnóstico inicial 100% gratuito y sin compromisos</span>
+              </div>
+              <div className="flex items-center gap-3 text-xs text-neutral-300">
+                <div className="w-6 h-6 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 text-purple-400">
+                  <Sparkles className="w-3.5 h-3.5" />
+                </div>
+                <span>Propuesta a la medida de tu presupuesto y objetivos</span>
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Interactive Form */}

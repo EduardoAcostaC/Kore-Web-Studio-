@@ -250,16 +250,10 @@ export default function ShowcaseCarousel() {
             <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
               <a
                 href="#contacto"
-                className="px-5 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-brand-blue to-brand-cyan hover:opacity-95 shadow-[0_0_20px_rgba(0,102,255,0.35)] transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-brand-blue to-brand-cyan hover:opacity-95 shadow-[0_0_20px_rgba(0,102,255,0.35)] hover:shadow-[0_0_28px_rgba(0,210,255,0.6)] transition-all flex items-center justify-center gap-2"
               >
                 <span>Solicitar Proyecto Similar</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#contacto"
-                className="px-4 py-3 rounded-xl font-medium text-xs text-neutral-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center justify-center gap-2"
-              >
-                <span>Consultar Detalles</span>
               </a>
             </div>
           </div>
