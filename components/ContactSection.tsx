@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Send, CheckCircle2, ArrowRight, ShieldCheck, Clock, Sparkles } from "lucide-react";
+import {
+  MessageCircle,
+  Send,
+  CheckCircle2,
+  ArrowRight,
+  ShieldCheck,
+  Clock,
+  Sparkles,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -12,16 +22,40 @@ export default function ContactSection() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorMessage(null);
 
-    // Simular envío rápido
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Ocurrió un error al enviar el formulario."
+        );
+      }
+
       setIsSubmitted(true);
-    }, 400);
+    } catch (err: unknown) {
+      const msg =
+        err instanceof Error
+          ? err.message
+          : "Hubo un problema de conexión al enviar el correo. Por favor intenta de nuevo o contáctanos por WhatsApp.";
+      setErrorMessage(msg);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -127,6 +161,30 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {errorMessage && (
+                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-left space-y-2 animate-in fade-in duration-200">
+                    <div className="flex items-start gap-2.5 text-red-400">
+                      <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                      <div className="text-xs leading-relaxed">
+                        <span className="font-semibold block text-red-300 mb-0.5">
+                          No se pudo enviar el correo:
+                        </span>
+                        {errorMessage}
+                      </div>
+                    </div>
+                    <div className="pt-1">
+                      <a
+                        href="https://wa.me/5215500000000?text=Hola%20Kore%20Web%20Studio,%20quiero%20solicitar%20asesor%C3%ADa%20gratuita%20para%20mi%20proyecto"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-semibold"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5" />
+                        <span>O háblanos directamente por WhatsApp aquí</span>
+                      </a>
+                    </div>
+                  </div>
+                )}
                 <div>
                   <label
                     className="block text-xs font-semibold text-neutral-300 mb-1.5"
@@ -212,12 +270,17 @@ export default function ContactSection() {
                   disabled={isLoading}
                   className="w-full py-3.5 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_25px_rgba(0,102,255,0.4)] hover:shadow-[0_0_35px_rgba(0,210,255,0.6)] hover:opacity-95 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
-                  <span>
-                    {isLoading
-                      ? "Enviando mensaje..."
-                      : "Solicitar Asesoría Gratuita"}
-                  </span>
-                  <Send className="w-4 h-4" />
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin text-white" />
+                      <span>Enviando mensaje...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Solicitar Asesoría Gratuita</span>
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </form>
             )}

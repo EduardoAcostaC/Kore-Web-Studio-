@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Menu, X, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Menu, X, MessageCircle } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
