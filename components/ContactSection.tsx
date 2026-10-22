@@ -12,6 +12,7 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -84,7 +85,7 @@ export default function ContactSection() {
 
             {/* WhatsApp Priority Channel */}
             <a
-              href="https://wa.me/5215500000000?text=Hola%20Kore%20Web%20Studio,%20quiero%20solicitar%20asesor%C3%ADa%20gratuita%20para%20mi%20proyecto"
+              href={getWhatsAppUrl(WHATSAPP_MESSAGES.contactCard)}
               target="_blank"
               rel="noopener noreferrer"
               className="group p-4 rounded-2xl bg-gradient-to-r from-emerald-500/15 to-emerald-600/5 border border-emerald-500/30 hover:border-emerald-400 flex items-center justify-between transition-all shadow-[0_0_25px_rgba(16,185,129,0.15)]"
@@ -174,7 +175,7 @@ export default function ContactSection() {
                     </div>
                     <div className="pt-1">
                       <a
-                        href="https://wa.me/5215500000000?text=Hola%20Kore%20Web%20Studio,%20quiero%20solicitar%20asesor%C3%ADa%20gratuita%20para%20mi%20proyecto"
+                        href={getWhatsAppUrl(WHATSAPP_MESSAGES.contactFallback)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-semibold"

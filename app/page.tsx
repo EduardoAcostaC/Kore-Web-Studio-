@@ -8,6 +8,7 @@ import ProcessSection from "@/components/ProcessSection";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Persistent Floating WhatsApp Action */}
+      <FloatingWhatsApp />
     </>
   );
 }

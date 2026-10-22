@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight, Menu, X, MessageCircle } from "lucide-react";
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,7 +55,7 @@ export default function Navbar() {
         {/* Right CTA Button & Mobile Menu Toggle */}
         <div className="flex items-center gap-2 sm:gap-2.5">
           <a
-            href="https://wa.me/5215500000000?text=Hola%20Kore%20Web%20Studio,%20quiero%20iniciar%20un%20proyecto"
+            href={getWhatsAppUrl(WHATSAPP_MESSAGES.navbar)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
@@ -100,7 +101,7 @@ export default function Navbar() {
           </nav>
           <div className="pt-2 flex flex-col gap-2.5">
             <a
-              href="https://wa.me/5215500000000?text=Hola%20Kore%20Web%20Studio,%20quiero%20iniciar%20un%20proyecto"
+              href={getWhatsAppUrl(WHATSAPP_MESSAGES.navbar)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}

@@ -10,6 +10,7 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -45,7 +46,7 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto relative z-10">
             <a
-              href="https://wa.me/5215500000000?text=Hola%20Kore%20Web%20Studio,%20quiero%20iniciar%20un%20proyecto"
+              href={getWhatsAppUrl(WHATSAPP_MESSAGES.footer)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-5 py-3 rounded-xl font-medium text-xs text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all flex items-center justify-center gap-2"

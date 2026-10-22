@@ -6,6 +6,7 @@ import {
   Smartphone,
   Headphones,
 } from "lucide-react";
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export default function Hero() {
   return (
@@ -41,7 +42,7 @@ export default function Hero() {
           <span>Ver Proyectos Destacados</span>
         </a>
         <a
-          href="https://wa.me/5215500000000?text=Hola%20Kore%20Web%20Studio,%20quiero%20información%20sobre%20un%20proyecto%20web"
+          href={getWhatsAppUrl(WHATSAPP_MESSAGES.hero)}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto px-6 py-4 rounded-xl font-medium text-sm text-neutral-200 bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-brand-cyan/40 transition-all flex items-center justify-center gap-2"
