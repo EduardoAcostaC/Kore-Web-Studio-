@@ -15,22 +15,26 @@ export default function Footer() {
     <footer className="bg-[#06070A] py-16 border-t border-[#1E2230]">
       <div className="max-w-[1360px] mx-auto px-5 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#1E2230]">
-          {/* Brand Info */}
           <div className="md:col-span-5 flex flex-col items-start gap-4">
-            <div className="flex items-center gap-3">
-              <div className="relative w-8 h-8 flex-shrink-0">
+            <a href="#" className="flex items-center gap-3 group">
+              <div className="relative w-9 h-9 flex-shrink-0">
                 <Image
                   src="/kore-icon.png"
-                  alt="Kore Logo"
-                  width={32}
-                  height={32}
-                  className="w-full h-full object-contain"
+                  alt="Kore Web Studio Logo"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-contain drop-shadow-[0_0_12px_rgba(0,82,255,0.6)] group-hover:scale-105 transition-transform"
                 />
               </div>
-              <span className="font-display font-black text-xl tracking-tight text-white uppercase">
-                Kore <span className="text-[#00D2FF]">Web Studio</span>
-              </span>
-            </div>
+              <div className="flex flex-col">
+                <span className="font-display font-black text-xl tracking-tight text-white uppercase leading-none">
+                  Kore Web <span className="text-[#00D2FF]">Studio</span>
+                </span>
+                <span className="font-mono text-[10px] tracking-widest text-[#8A90A6] uppercase mt-0.5">
+                  &lt; Development • Design &gt;
+                </span>
+              </div>
+            </a>
             <p className="font-mono text-xs text-[#8A90A6] max-w-sm leading-relaxed">
               Construimos el futuro digital de tu negocio con estándares de ingeniería, alto impacto visual y conversión sin compromisos.
             </p>

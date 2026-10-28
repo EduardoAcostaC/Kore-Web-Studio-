@@ -115,20 +115,21 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
               href="#contacto"
-              className="px-8 py-4 bg-[#0052FF] text-white font-mono text-xs md:text-sm font-bold uppercase tracking-widest text-center hover:bg-[#0066FF] hover:shadow-[0_0_35px_rgba(0,82,255,0.8)] transition-all flex items-center justify-center gap-3"
+              className="group px-7 py-4 bg-[#0052FF] hover:bg-[#0066FF] text-white font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-3 hover:shadow-[0_0_35px_rgba(0,82,255,0.7)] shrink-0"
             >
               <span>INICIAR PROYECTO</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
             <a
               href={getWhatsAppUrl(WHATSAPP_MESSAGES.hero)}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border border-[#2A3048] bg-[#0E1118]/80 text-[#C4C9D9] font-mono text-xs md:text-sm font-semibold uppercase tracking-widest text-center hover:border-emerald-500/60 hover:text-emerald-300 transition-all flex items-center justify-center gap-2"
+              className="group px-6 py-4 border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/[0.08] hover:bg-emerald-500/[0.16] text-[#E0E6F2] hover:text-white font-mono text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(16,185,129,0.08)] hover:shadow-[0_0_30px_rgba(16,185,129,0.25)] shrink-0"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-400" />
-              <span>CONSULTA INMEDIATA POR WHATSAPP →</span>
+              <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="whitespace-nowrap">CONSULTA INMEDIATA POR WHATSAPP</span>
+              <ArrowRight className="w-4 h-4 text-emerald-400/80 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all shrink-0" />
             </a>
           </div>
         </div>
