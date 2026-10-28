@@ -32,19 +32,25 @@ body {
 
 /* Outlined typography effect with clean merged contours (no internal overlapping lines) */
 .text-stroke-white {
-  color: #08090C;
+  font-family: var(--font-work-sans), sans-serif;
+  font-weight: 900;
+  color: transparent;
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.75);
-  paint-order: stroke fill;
+  letter-spacing: -0.01em;
 }
 .text-stroke-blue {
-  color: #08090C;
+  font-family: var(--font-work-sans), sans-serif;
+  font-weight: 900;
+  color: transparent;
   -webkit-text-stroke: 1.5px #00D2FF;
-  paint-order: stroke fill;
+  letter-spacing: -0.01em;
 }
 .text-stroke-light {
-  color: #08090C;
+  font-family: var(--font-work-sans), sans-serif;
+  font-weight: 900;
+  color: transparent;
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
-  paint-order: stroke fill;
+  letter-spacing: -0.01em;
 }
 
 @media (min-width: 768px) {

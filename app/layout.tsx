@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, JetBrains_Mono } from "next/font/google";
+import { Inter, Montserrat, JetBrains_Mono, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +13,13 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
   weight: ["600", "700", "800", "900"],
+});
+
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["900"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -71,7 +78,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
+      className={`${inter.variable} ${montserrat.variable} ${workSans.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
     >
       <head>
         <script
