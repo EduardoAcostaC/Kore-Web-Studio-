@@ -71,7 +71,7 @@ export default function CapabilitiesSection() {
             <h2 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-none">
               TODO LO QUE<br />
               NECESITAS<br />
-              PARA <span className="text-stroke-white">VENDER</span> EN<br />
+              PARA <span className="bg-gradient-to-r from-[#00D2FF] via-[#38BDF8] to-[#0052FF] bg-clip-text text-transparent">VENDER</span> EN<br />
               <span className="text-[#00D2FF]">LÍNEA</span>
             </h2>
           </div>

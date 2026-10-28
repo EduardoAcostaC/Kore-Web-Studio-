@@ -95,8 +95,10 @@ export default function ProjectsSection() {
             </span>
             <h2 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-none">
               PROYECTOS QUE<br />
-              HACEN <span className="text-stroke-white">LA</span><br />
-              <span className="text-[#00D2FF]">DIFERENCIA</span>
+              HACEN LA<br />
+              <span className="bg-gradient-to-r from-[#00D2FF] via-[#38BDF8] to-[#0052FF] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(0,210,255,0.3)]">
+                DIFERENCIA
+              </span>
             </h2>
           </div>
           <a

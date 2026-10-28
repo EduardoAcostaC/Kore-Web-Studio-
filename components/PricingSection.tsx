@@ -28,7 +28,9 @@ export default function PricingSection() {
           </span>
           <h2 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-none">
             PRECIOS<br />
-            <span className="text-stroke-white">SIN LETRA</span><br />
+            <span className="bg-gradient-to-r from-[#00D2FF] via-[#38BDF8] to-[#0052FF] bg-clip-text text-transparent">
+              SIN LETRA
+            </span><br />
             <span className="text-[#00D2FF]">CHICA.</span>
           </h2>
           <p className="text-sm text-[#8A90A6] mt-4 font-mono max-w-2xl">

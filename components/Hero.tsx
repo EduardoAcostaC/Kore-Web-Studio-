@@ -96,7 +96,9 @@ export default function Hero() {
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-[104px] tracking-tight uppercase leading-[0.92] text-white">
             CONSTRUIMOS TU<br />
             <span className="text-white">PRESENCIA</span>{" "}
-            <span className="text-stroke-white">DIGITAL</span><br />
+            <span className="bg-gradient-to-r from-[#00D2FF] via-[#38BDF8] to-[#0052FF] bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(0,210,255,0.35)]">
+              DIGITAL
+            </span><br />
             <span className="text-[#00D2FF] drop-shadow-[0_0_35px_rgba(0,210,255,0.4)]">
               QUE CIERRA.
             </span>
