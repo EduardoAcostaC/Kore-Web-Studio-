@@ -3,22 +3,22 @@
 import { useState } from "react";
 import {
   MessageCircle,
-  Send,
-  CheckCircle2,
   ArrowRight,
-  ShieldCheck,
-  Clock,
-  Sparkles,
+  CheckCircle2,
   AlertCircle,
   Loader2,
+  Mail,
+  Clock,
+  ShieldCheck,
 } from "lucide-react";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
-    contact: "",
     email: "",
+    contact: "",
+    service: "Sitio Web Pro ($1,150 USD)",
     goal: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -43,7 +43,7 @@ export default function ContactSection() {
 
       if (!response.ok) {
         throw new Error(
-          result.error || "Ocurrió un error al enviar el formulario."
+          result.error || "Ocurrió un error al enviar tu solicitud de cotización."
         );
       }
 
@@ -52,7 +52,7 @@ export default function ContactSection() {
       const msg =
         err instanceof Error
           ? err.message
-          : "Hubo un problema de conexión al enviar el correo. Por favor intenta de nuevo o contáctanos por WhatsApp.";
+          : "Hubo un problema de conexión. Por favor intenta de nuevo o escríbenos directamente por WhatsApp.";
       setErrorMessage(msg);
     } finally {
       setIsLoading(false);
@@ -60,110 +60,133 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-5 lg:px-8 py-20 pb-28" id="contacto">
-      <div className="rounded-3xl glow-card p-6 sm:p-10 lg:p-14 relative overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
-        {/* Glow orb */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/15 rounded-full blur-[100px] pointer-events-none" />
+    <section
+      className="relative py-24 lg:py-32 border-b border-[#1E2230] overflow-hidden bg-[#08090C]"
+      id="contacto"
+    >
+      {/* Background Watermark 09 */}
+      <div className="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+        09
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start relative z-10">
-          {/* Left Column: Direct Warm Channels */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/25 text-brand-cyan text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Disponibilidad actual para nuevos proyectos</span>
-            </div>
-
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
-              Hablemos de tu idea y te asesoramos sin costo ni compromiso.
+      <div className="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Column: Direct Contact Info & Guarantees */}
+          <div className="lg:col-span-5">
+            <span className="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+              [ 09 — CONTACTO DIRECTO ]
+            </span>
+            <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white leading-tight mb-6">
+              CUÉNTANOS<br />
+              DE TU NEGOCIO.<br />
+              EN 24 H TIENES<br />
+              <span className="text-[#00D2FF]">PROPUESTA.</span>
             </h2>
-
-            <p className="text-neutral-300 text-sm leading-relaxed">
-              ¿No sabes exactamente qué tipo de web o plataforma necesita tu marca?
-              Conversemos 15 minutos, analizamos tu situación actual y te damos una
-              recomendación honesta.
+            <p className="text-sm text-[#8A90A6] leading-relaxed mb-8">
+              Sin cotizaciones eternas: nos dices qué vendes y a quién, y te enviamos un plan claro con precio exacto y fecha de entrega por escrito. La primera consulta es 100% gratuita.
             </p>
 
-            {/* WhatsApp Priority Channel */}
-            <a
-              href={getWhatsAppUrl(WHATSAPP_MESSAGES.contactCard)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-4 rounded-2xl bg-gradient-to-r from-emerald-500/15 to-emerald-600/5 border border-emerald-500/30 hover:border-emerald-400 flex items-center justify-between transition-all shadow-[0_0_25px_rgba(16,185,129,0.15)]"
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
-                  <MessageCircle className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="text-white font-bold text-sm group-hover:text-emerald-300 transition-colors">
-                    Hablar directo por WhatsApp
-                  </div>
-                  <div className="text-emerald-400 text-xs">
-                    Respuesta promedio en menos de 15 minutos
-                  </div>
-                </div>
+            <div className="space-y-4 font-mono text-xs text-[#C4C9D9]">
+              <div className="flex items-center gap-3">
+                <span className="text-[#00D2FF] font-bold flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5" />
+                  EMAIL:
+                </span>
+                <a
+                  href="mailto:contacto@korewebstudio.com"
+                  className="text-white hover:text-[#00D2FF] transition-colors"
+                >
+                  contacto@korewebstudio.com
+                </a>
               </div>
-              <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
-            </a>
 
-            {/* Key Guarantees */}
-            <div className="pt-2 space-y-3">
-              <div className="flex items-center gap-3 text-xs text-neutral-300">
-                <div className="w-6 h-6 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center flex-shrink-0 text-brand-cyan">
+              <div className="flex items-center gap-3">
+                <span className="text-[#00D2FF] font-bold flex items-center gap-1.5">
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  WHATSAPP:
+                </span>
+                <a
+                  href={getWhatsAppUrl(WHATSAPP_MESSAGES.contactCard)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 font-semibold underline flex items-center gap-1"
+                >
+                  <span>Chat Directo en Tiempo Real →</span>
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <span className="text-[#00D2FF] font-bold flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5" />
-                </div>
-                <span>Respuesta en menos de 15 minutos en horario hábil</span>
+                  HORARIO:
+                </span>
+                <span className="text-[#8A90A6]">
+                  Lunes a Viernes 09:00 - 19:00 hrs
+                </span>
               </div>
-              <div className="flex items-center gap-3 text-xs text-neutral-300">
-                <div className="w-6 h-6 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0 text-emerald-400">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
-                <span>Diagnóstico inicial 100% gratuito y sin compromisos</span>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-[#1E2230] space-y-3">
+              <div className="flex items-center gap-2 font-mono text-[11px] text-[#00D2FF] uppercase tracking-wider">
+                <ShieldCheck className="w-4 h-4 text-[#00D2FF]" />
+                <span>RESPUESTA GARANTIZADA</span>
               </div>
-              <div className="flex items-center gap-3 text-xs text-neutral-300">
-                <div className="w-6 h-6 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 text-purple-400">
-                  <Sparkles className="w-3.5 h-3.5" />
-                </div>
-                <span>Propuesta a la medida de tu presupuesto y objetivos</span>
-              </div>
+              <p className="text-xs text-[#8A90A6] leading-relaxed">
+                Recibe tu cotización personalizada, propuesta de arquitectura y cronograma de entrega en menos de 24 horas hábiles.
+              </p>
             </div>
           </div>
 
-          {/* Right Column: Interactive Form */}
-          <div className="lg:col-span-7 bg-[#070b14]/90 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-xl">
-            <h3 className="font-display font-bold text-lg text-white mb-1">
-              Envíanos un mensaje
-            </h3>
-            <p className="text-neutral-400 text-xs mb-5">
-              Te responderemos hoy mismo para coordinar una llamada o responder tus
-              dudas.
-            </p>
-
+          {/* Right Column: Full Interactive Form connected to /api/contact */}
+          <div className="lg:col-span-7">
             {isSubmitted ? (
-              <div className="p-6 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 text-center space-y-3 animate-in fade-in duration-300">
-                <CheckCircle2 className="w-10 h-10 text-brand-cyan mx-auto" />
-                <h4 className="text-white font-display font-bold text-base">
-                  ¡Mensaje recibido con éxito!
+              <div className="p-8 bg-[#0C0E14] border border-[#00D2FF]/40 text-center space-y-4 shadow-2xl animate-in fade-in duration-300">
+                <div className="w-14 h-14 mx-auto rounded-full bg-[#0052FF]/20 border border-[#00D2FF]/50 flex items-center justify-center text-[#00D2FF]">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h4 className="font-display font-black text-2xl text-white uppercase tracking-wide">
+                  ¡Propuesta en marcha!
                 </h4>
-                <p className="text-xs text-brand-cyan leading-relaxed max-w-md mx-auto">
-                  Gracias por contactarnos. Nos comunicaremos contigo en breve para
-                  asesorarte a fondo y poner en marcha tu proyecto.
+                <p className="text-xs text-[#8A90A6] leading-relaxed max-w-md mx-auto">
+                  Hemos recibido los detalles de tu proyecto. Nuestro equipo técnico evaluará tu modelo y te responderá en menos de 24 horas hábiles con tu propuesta personalizada.
                 </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setFormData({ name: "", contact: "", email: "", goal: "" });
-                  }}
-                  className="mt-3 px-4 py-2 text-xs font-semibold rounded-lg bg-white/5 border border-white/10 text-neutral-300 hover:text-white"
-                >
-                  Enviar otro mensaje
-                </button>
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href={getWhatsAppUrl(
+                      `Hola Kore Web Studio, acabo de enviar el formulario para ${formData.name}.`
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-mono text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Avisar por WhatsApp</span>
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setFormData({
+                        name: "",
+                        email: "",
+                        contact: "",
+                        service: "Sitio Web Pro ($1,150 USD)",
+                        goal: "",
+                      });
+                    }}
+                    className="px-6 py-3 border border-[#1E2230] text-[#8A90A6] hover:text-white font-mono text-xs uppercase tracking-widest transition-colors cursor-pointer"
+                  >
+                    Enviar otra consulta
+                  </button>
+                </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                onSubmit={handleSubmit}
+                className="p-8 bg-[#0C0E14] border border-[#1E2230] flex flex-col gap-5 shadow-2xl"
+              >
                 {errorMessage && (
-                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-left space-y-2 animate-in fade-in duration-200">
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 text-left space-y-2 animate-in fade-in duration-200">
                     <div className="flex items-start gap-2.5 text-red-400">
                       <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                       <div className="text-xs leading-relaxed">
@@ -181,108 +204,128 @@ export default function ContactSection() {
                         className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-semibold"
                       >
                         <MessageCircle className="w-3.5 h-3.5" />
-                        <span>O háblanos directamente por WhatsApp aquí</span>
+                        <span>O háblanos directamente por WhatsApp aquí →</span>
                       </a>
                     </div>
                   </div>
                 )}
-                <div>
-                  <label
-                    className="block text-xs font-semibold text-neutral-300 mb-1.5"
-                    htmlFor="c-name"
-                  >
-                    Tu Nombre o Nombre de tu Marca *
-                  </label>
-                  <input
-                    id="c-name"
-                    required
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    placeholder="Ej. Carlos Rodríguez o MiMarca"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-colors"
-                  />
-                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      className="block text-xs font-semibold text-neutral-300 mb-1.5"
-                      htmlFor="c-contact"
-                    >
-                      WhatsApp o Teléfono *
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="flex flex-col gap-2">
+                    <label className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">
+                      Nombre Completo o Marca *
                     </label>
                     <input
-                      id="c-contact"
                       required
                       type="text"
-                      value={formData.contact}
+                      value={formData.name}
                       onChange={(e) =>
-                        setFormData({ ...formData, contact: e.target.value })
+                        setFormData({ ...formData, name: e.target.value })
                       }
-                      placeholder="+54 9 11 1234-5678"
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-colors"
+                      placeholder="Alexander Ramos"
+                      className="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors"
                     />
                   </div>
-                  <div>
-                    <label
-                      className="block text-xs font-semibold text-neutral-300 mb-1.5"
-                      htmlFor="c-email"
-                    >
-                      Correo Electrónico
+                  <div className="flex flex-col gap-2">
+                    <label className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">
+                      Email Corporativo *
                     </label>
                     <input
-                      id="c-email"
+                      required
                       type="email"
                       value={formData.email}
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      placeholder="carlos@empresa.com"
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-colors"
+                      placeholder="alex@tuempresa.com"
+                      className="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors"
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label
-                    className="block text-xs font-semibold text-neutral-300 mb-1.5"
-                    htmlFor="c-goal"
-                  >
-                    ¿Qué buscas lograr con tu sitio web? *
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="flex flex-col gap-2">
+                    <label className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">
+                      WhatsApp / Teléfono *
+                    </label>
+                    <input
+                      required
+                      type="tel"
+                      value={formData.contact}
+                      onChange={(e) =>
+                        setFormData({ ...formData, contact: e.target.value })
+                      }
+                      placeholder="+52 55 ..."
+                      className="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">
+                      ¿Qué servicio necesitas?
+                    </label>
+                    <select
+                      value={formData.service}
+                      onChange={(e) =>
+                        setFormData({ ...formData, service: e.target.value })
+                      }
+                      className="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00D2FF] transition-colors"
+                    >
+                      <option value="Sitio Web Pro ($1,150 USD)">
+                        Sitio Web Pro ($1,150 USD)
+                      </option>
+                      <option value="Landing Page ($490 USD)">
+                        Landing Page ($490 USD)
+                      </option>
+                      <option value="Tienda Ecommerce ($1,890 USD)">
+                        Tienda Ecommerce ($1,890 USD)
+                      </option>
+                      <option value="Desarrollo a la Medida / Enterprise">
+                        Desarrollo a la Medida / Enterprise
+                      </option>
+                      <option value="Auditoría Gratuita de mi Sitio Actual">
+                        Auditoría Gratuita de mi Sitio Actual
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">
+                    ¿Qué vendes y qué quieres lograr con tu sitio? *
                   </label>
                   <textarea
-                    id="c-goal"
                     required
-                    rows={3}
+                    rows={4}
                     value={formData.goal}
                     onChange={(e) =>
                       setFormData({ ...formData, goal: e.target.value })
                     }
-                    placeholder="Cuéntanos sobre tu proyecto: ¿Buscas rediseñar tu web actual, crear una tienda, o un sitio profesional con reservas?"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-colors resize-none"
+                    placeholder="Describe brevemente tu modelo de negocio, clientes objetivo o cualquier requerimiento específico..."
+                    className="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full py-3.5 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_25px_rgba(0,102,255,0.4)] hover:shadow-[0_0_35px_rgba(0,210,255,0.6)] hover:opacity-95 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full mt-2 py-4 bg-[#0052FF] text-white font-mono text-sm font-bold uppercase tracking-widest hover:bg-[#0066FF] hover:shadow-[0_0_35px_rgba(0,82,255,0.7)] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {isLoading ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin text-white" />
-                      <span>Enviando mensaje...</span>
+                      <span>PROCESANDO PROPUESTA...</span>
                     </>
                   ) : (
                     <>
-                      <span>Solicitar Asesoría Gratuita</span>
-                      <Send className="w-4 h-4" />
+                      <span>QUIERO MI PROPUESTA</span>
+                      <ArrowRight className="w-4 h-4" />
                     </>
                   )}
                 </button>
+
+                <p className="font-mono text-[11px] text-[#636B82] text-center mt-1">
+                  Respuesta en menos de 24 horas • Confidencialidad y NDA disponible • Sin compromiso
+                </p>
               </form>
             )}
           </div>

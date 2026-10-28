@@ -1,103 +1,185 @@
-import {
-  Eye,
-  MessageCircle,
-  ShieldCheck,
-  Zap,
-  Smartphone,
-  Headphones,
-} from "lucide-react";
+"use client";
+
+import { ArrowRight, MessageCircle, ShieldCheck, Zap, Smartphone, Headphones } from "lucide-react";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 
 export default function Hero() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-5 lg:px-8 text-center flex flex-col items-center pt-8 pb-16">
-      {/* Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-neutral-300 text-xs font-medium mb-8 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] hover:border-brand-cyan/40 transition-colors">
-        <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_10px_#00D2FF] animate-pulse" />
-        <span>Acompañamiento personalizado • Interfaces diseñadas para cautivar</span>
+    <section className="relative w-full pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden border-b border-[#1E2230]">
+      {/* Curved Cyber Waves Graphic Overlay (Cobalt & Cyan neon waves) */}
+      <div className="absolute right-[-15%] top-[-5%] w-[850px] h-[850px] pointer-events-none opacity-40 md:opacity-75 z-0">
+        <svg
+          className="w-full h-full"
+          fill="none"
+          viewBox="0 0 800 800"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="450"
+            cy="350"
+            r="380"
+            stroke="url(#electricGrad)"
+            strokeDasharray="8 6"
+            strokeWidth="1.5"
+          />
+          <circle
+            cx="450"
+            cy="350"
+            r="320"
+            stroke="url(#electricGrad)"
+            strokeWidth="2"
+          />
+          <circle
+            cx="450"
+            cy="350"
+            r="260"
+            stroke="#00D2FF"
+            strokeOpacity="0.6"
+            strokeWidth="1.2"
+          />
+          <circle
+            cx="450"
+            cy="350"
+            r="200"
+            stroke="#0052FF"
+            strokeOpacity="0.8"
+            strokeWidth="2.5"
+          />
+          <path
+            d="M 100 100 C 350 150, 480 300, 700 700"
+            stroke="#00D2FF"
+            strokeLinecap="round"
+            strokeWidth="2.5"
+          />
+          <path
+            d="M 150 50 C 380 120, 520 280, 780 620"
+            stroke="#0052FF"
+            strokeWidth="3"
+          />
+          <path
+            d="M 220 20 C 420 100, 560 250, 800 550"
+            stroke="#00D2FF"
+            strokeWidth="1.5"
+          />
+          <defs>
+            <linearGradient
+              id="electricGrad"
+              gradientUnits="userSpaceOnUse"
+              x1="0"
+              x2="800"
+              y1="0"
+              y2="800"
+            >
+              <stop stopColor="#00D2FF" />
+              <stop offset="0.5" stopColor="#0052FF" />
+              <stop offset="1" stopColor="#08090C" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
 
-      {/* Main Headline */}
-      <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-7xl tracking-[-0.035em] text-white max-w-5xl leading-[1.1] mb-7">
-        Creamos sitios y plataformas web que{" "}
-        <span className="shimmer-text block sm:inline">
-          enamoran a tus visitas y las convierten en clientes fieles.
-        </span>
-      </h1>
+      {/* Background Radial Ambient Glows */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#0052FF]/15 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#00D2FF]/10 blur-[160px] pointer-events-none" />
 
-      {/* Subtitle */}
-      <p className="font-sans text-base sm:text-lg lg:text-xl text-neutral-300 max-w-2xl font-normal leading-relaxed mb-10">
-        Diseño premium y desarrollo a medida para marcas y profesionales que
-        buscan proyectar una imagen de clase mundial, generar confianza inmediata y
-        multiplicar sus resultados.
-      </p>
+      <div className="relative z-10 max-w-[1360px] mx-auto px-5 lg:px-10">
+        {/* Eyebrow Tag */}
+        <div className="flex items-center gap-2 mb-6">
+          <span className="inline-block w-2.5 h-2.5 bg-[#00D2FF] shadow-[0_0_10px_#00D2FF]" />
+          <p className="font-mono text-xs md:text-sm text-[#00D2FF] font-semibold tracking-widest uppercase">
+            CLIENTES, NO SOLO VISITAS. INGENIERÍA WEB &amp; HIGH-CONVERSION.
+          </p>
+        </div>
 
-      {/* Friendly CTAs */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mb-14">
-        <a
-          href="#portafolio"
-          className="w-full sm:w-auto px-7 py-4 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brand-blue via-[#0080ff] to-brand-cyan shadow-[0_0_30px_rgba(0,102,255,0.5)] hover:shadow-[0_0_40px_rgba(0,210,255,0.7)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-        >
-          <Eye className="w-5 h-5 text-white" />
-          <span>Ver Proyectos Destacados</span>
-        </a>
-        <a
-          href={getWhatsAppUrl(WHATSAPP_MESSAGES.hero)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full sm:w-auto px-6 py-4 rounded-xl font-medium text-sm text-neutral-200 bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-brand-cyan/40 transition-all flex items-center justify-center gap-2"
-        >
-          <MessageCircle className="w-5 h-5 text-emerald-400" />
-          <span>Hablar por WhatsApp</span>
-        </a>
-      </div>
+        {/* Reference Style Huge Duo/Outlined Headline */}
+        <div className="max-w-6xl">
+          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-[104px] tracking-tight uppercase leading-[0.92] text-white">
+            CONSTRUIMOS TU<br />
+            <span className="text-white">PRESENCIA</span>{" "}
+            <span className="text-stroke-white">DIGITAL</span><br />
+            <span className="text-[#00D2FF] drop-shadow-[0_0_35px_rgba(0,210,255,0.4)]">
+              QUE CIERRA.
+            </span>
+          </h1>
+        </div>
 
-      {/* Trust Bar: Beneficios Inmediatos */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pt-6 border-t border-white/10 text-left">
-        <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-          <ShieldCheck className="w-7 h-7 text-brand-cyan flex-shrink-0" />
-          <div>
-            <div className="text-white font-semibold text-xs sm:text-sm">
-              Garantía de Satisfacción
-            </div>
-            <div className="text-neutral-400 text-[11px]">
-              Aprobación antes de publicar
-            </div>
+        {/* Subtitle description & CTA Buttons */}
+        <div className="mt-8 md:mt-10 max-w-2xl">
+          <p className="text-base sm:text-lg text-[#9EA6BC] leading-relaxed font-normal">
+            Ahora mismo alguien busca lo que tú vendes. Construimos el sitio que
+            hace que te elijan a ti, sin plantillas lentas y con arquitectura
+            cloud de última generación.
+          </p>
+
+          {/* CTA row modeled on reference (solid high-impact primary + WhatsApp / outline secondary) */}
+          <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a
+              href="#contacto"
+              className="px-8 py-4 bg-[#0052FF] text-white font-mono text-xs md:text-sm font-bold uppercase tracking-widest text-center hover:bg-[#0066FF] hover:shadow-[0_0_35px_rgba(0,82,255,0.8)] transition-all flex items-center justify-center gap-3"
+            >
+              <span>INICIAR PROYECTO</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href={getWhatsAppUrl(WHATSAPP_MESSAGES.hero)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border border-[#2A3048] bg-[#0E1118]/80 text-[#C4C9D9] font-mono text-xs md:text-sm font-semibold uppercase tracking-widest text-center hover:border-emerald-500/60 hover:text-emerald-300 transition-all flex items-center justify-center gap-2"
+            >
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>CONSULTA INMEDIATA POR WHATSAPP →</span>
+            </a>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-          <Zap className="w-7 h-7 text-emerald-400 flex-shrink-0" />
-          <div>
-            <div className="text-white font-semibold text-xs sm:text-sm">
-              Carga Instantánea
-            </div>
-            <div className="text-neutral-400 text-[11px]">
-              Nadie abandona por lentitud
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-          <Smartphone className="w-7 h-7 text-purple-400 flex-shrink-0" />
-          <div>
-            <div className="text-white font-semibold text-xs sm:text-sm">
-              100% Mobile First
-            </div>
-            <div className="text-neutral-400 text-[11px]">
-              Experiencia perfecta en celular
+        {/* Trust Badges Bar */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16 pt-8 border-t border-[#1E2230]">
+          <div className="flex items-center gap-3 p-3 bg-[#0C0E14] border border-[#1E2230]">
+            <ShieldCheck className="w-5 h-5 text-[#00D2FF] flex-shrink-0" />
+            <div>
+              <div className="font-mono text-xs text-white font-bold uppercase">
+                Garantía Total
+              </div>
+              <div className="font-mono text-[11px] text-[#8A90A6]">
+                Aprobación antes de publicar
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-          <Headphones className="w-7 h-7 text-amber-400 flex-shrink-0" />
-          <div>
-            <div className="text-white font-semibold text-xs sm:text-sm">
-              Soporte Continuo
+          <div className="flex items-center gap-3 p-3 bg-[#0C0E14] border border-[#1E2230]">
+            <Zap className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+            <div>
+              <div className="font-mono text-xs text-white font-bold uppercase">
+                Carga Instantánea
+              </div>
+              <div className="font-mono text-[11px] text-[#8A90A6]">
+                Score 95+ Core Web Vitals
+              </div>
             </div>
-            <div className="text-neutral-400 text-[11px]">
-              Nunca te dejamos solo
+          </div>
+
+          <div className="flex items-center gap-3 p-3 bg-[#0C0E14] border border-[#1E2230]">
+            <Smartphone className="w-5 h-5 text-purple-400 flex-shrink-0" />
+            <div>
+              <div className="font-mono text-xs text-white font-bold uppercase">
+                100% Mobile First
+              </div>
+              <div className="font-mono text-[11px] text-[#8A90A6]">
+                Experiencia táctil fluida
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 p-3 bg-[#0C0E14] border border-[#1E2230]">
+            <Headphones className="w-5 h-5 text-amber-400 flex-shrink-0" />
+            <div>
+              <div className="font-mono text-xs text-white font-bold uppercase">
+                Soporte Continuo
+              </div>
+              <div className="font-mono text-[11px] text-[#8A90A6]">
+                Acompañamiento post-lanzamiento
+              </div>
             </div>
           </div>
         </div>

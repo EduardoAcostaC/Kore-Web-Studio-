@@ -2,6 +2,7 @@ export interface ContactEmailData {
   name: string;
   contact: string;
   email?: string;
+  service?: string;
   goal: string;
 }
 
@@ -16,7 +17,7 @@ function cleanPhoneNumber(phone: string): string {
  * Genera el cuerpo HTML del correo con la estética y colores de Kore Web Studio
  */
 export function generateContactEmailHtml(data: ContactEmailData): string {
-  const { name, contact, email, goal } = data;
+  const { name, contact, email, service, goal } = data;
   const cleanPhone = cleanPhoneNumber(contact);
   const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
     `Hola ${name}, recibimos tu solicitud en Kore Web Studio para tu proyecto web.`
@@ -135,6 +136,24 @@ export function generateContactEmailHtml(data: ContactEmailData): string {
                   </td>
                 </tr>
 
+                <!-- Field: Servicio Requerido -->
+                ${
+                  service
+                    ? `
+                <tr>
+                  <td style="padding: 16px 20px; border-bottom: 1px solid #152238;">
+                    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b; margin-bottom: 4px;">
+                      Servicio Seleccionado
+                    </div>
+                    <div style="font-size: 15px; font-weight: 700; color: #00d2ff;">
+                      ${escapeHtml(service)}
+                    </div>
+                  </td>
+                </tr>
+                `
+                    : ""
+                }
+
                 <!-- Field: Objetivo del Proyecto -->
                 <tr>
                   <td style="padding: 18px 20px;">
@@ -207,7 +226,7 @@ export function generateContactEmailHtml(data: ContactEmailData): string {
  * Versión de texto plano alternativa
  */
 export function generateContactEmailText(data: ContactEmailData): string {
-  const { name, contact, email, goal } = data;
+  const { name, contact, email, service, goal } = data;
   return `
 KORE WEB STUDIO - NUEVA SOLICITUD DE PROYECTO
 ==============================================
@@ -218,6 +237,7 @@ DATOS DEL SOLICITANTE:
 - Nombre / Marca: ${name}
 - WhatsApp / Teléfono: ${contact}
 - Correo Electrónico: ${email || "No especificado"}
+- Servicio: ${service || "No especificado"}
 
 OBJETIVO DEL PROYECTO:
 ${goal}

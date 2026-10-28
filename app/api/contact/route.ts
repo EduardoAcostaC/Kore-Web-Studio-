@@ -10,7 +10,7 @@ import {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, contact, email, goal } = body;
+    const { name, contact, email, service, goal } = body;
 
     // Validación de campos obligatorios
     if (!name || typeof name !== "string" || !name.trim()) {
@@ -80,6 +80,7 @@ export async function POST(request: Request) {
       name: name.trim(),
       contact: contact.trim(),
       email: email?.trim(),
+      service: typeof service === "string" ? service.trim() : undefined,
       goal: goal.trim(),
     });
 
@@ -87,8 +88,11 @@ export async function POST(request: Request) {
       name: name.trim(),
       contact: contact.trim(),
       email: email?.trim(),
+      service: typeof service === "string" ? service.trim() : undefined,
       goal: goal.trim(),
     });
+
+    const serviceTag = service ? ` [${service.trim()}]` : "";
 
     // Enviar el correo a través de Google Gmail SMTP
     const info = await transporter.sendMail({
@@ -98,7 +102,7 @@ export async function POST(request: Request) {
         email && email.trim().includes("@")
           ? email.trim()
           : gmailUser,
-      subject: `🚀 Nueva Solicitud de Proyecto: ${name.trim()}`,
+      subject: `🚀 Nueva Solicitud${serviceTag}: ${name.trim()}`,
       html: htmlContent,
       text: textContent,
       attachments,
