@@ -33,7 +33,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-display font-black text-xl tracking-tight text-white uppercase leading-none">
-              Kore <span className="text-[#00D2FF]">Studio</span>
+              Kore Web <span className="text-[#00D2FF]">Studio</span>
             </span>
             <span className="font-mono text-[10px] tracking-widest text-[#8A90A6] uppercase mt-0.5">
               &lt; Development • Design &gt;

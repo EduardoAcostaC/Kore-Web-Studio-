@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   AlertCircle,
   Loader2,
-  Mail,
   Clock,
   ShieldCheck,
 } from "lucide-react";
@@ -87,19 +86,6 @@ export default function ContactSection() {
             </p>
 
             <div className="space-y-4 font-mono text-xs text-[#C4C9D9]">
-              <div className="flex items-center gap-3">
-                <span className="text-[#00D2FF] font-bold flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5" />
-                  EMAIL:
-                </span>
-                <a
-                  href="mailto:contacto@korewebstudio.com"
-                  className="text-white hover:text-[#00D2FF] transition-colors"
-                >
-                  contacto@korewebstudio.com
-                </a>
-              </div>
-
               <div className="flex items-center gap-3">
                 <span className="text-[#00D2FF] font-bold flex items-center gap-1.5">
                   <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
