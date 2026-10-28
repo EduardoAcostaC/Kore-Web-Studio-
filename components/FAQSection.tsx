@@ -12,7 +12,7 @@ const faqs: FAQItem[] = [
   {
     question: "¿Cuánto cuesta una página web profesional con Kore?",
     answer:
-      "Tenemos esquemas directos: Landing Page desde $490 USD con entrega en 5-7 días; Sitio Web Pro por $1,150 USD con múltiples secciones, CMS y hosting anual; y proyectos a la medida o E-Commerce desde $1,890 USD. Sin mensualidades ocultas ni costes sorpresa.",
+      "Nuestros esquemas son directos y transparentes: KORE / LAUNCH por $6,000 MXN (~$300 USD) para landing pages de alta conversión; KORE / PRO por $15,000 MXN (~$750 USD) para sitios completos con CMS y hosting anual; KORE / ENTERPRISE desde $25,000 MXN (~$1,250 USD) para plataformas avanzadas y e-commerce; y KORE / CUSTOM adaptado 100% a la medida de tus objetivos. Esquema de pago: 50% anticipo y 50% contra entrega, sin costos ocultos.",
   },
   {
     question: "¿En cuánto tiempo entregan el sitio listo para producción?",

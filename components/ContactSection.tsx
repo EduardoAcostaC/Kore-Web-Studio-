@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   MessageCircle,
   ArrowRight,
@@ -17,9 +17,26 @@ export default function ContactSection() {
     name: "",
     email: "",
     contact: "",
-    service: "Sitio Web Pro ($1,150 USD)",
+    service: "KORE / PRO ($15,000 MXN / ~$750 USD)",
     goal: "",
   });
+
+  useEffect(() => {
+    const handlePlanSelect = (e: Event) => {
+      const customEvent = e as CustomEvent<{ plan?: string }>;
+      if (customEvent.detail?.plan) {
+        setFormData((prev) => ({
+          ...prev,
+          service: customEvent.detail.plan as string,
+        }));
+      }
+    };
+
+    window.addEventListener("kore:select-plan", handlePlanSelect);
+    return () => {
+      window.removeEventListener("kore:select-plan", handlePlanSelect);
+    };
+  }, []);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -156,7 +173,7 @@ export default function ContactSection() {
                         name: "",
                         email: "",
                         contact: "",
-                        service: "Sitio Web Pro ($1,150 USD)",
+                        service: "KORE / PRO ($15,000 MXN / ~$750 USD)",
                         goal: "",
                       });
                     }}
@@ -256,17 +273,17 @@ export default function ContactSection() {
                       }
                       className="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00D2FF] transition-colors"
                     >
-                      <option value="Sitio Web Pro ($1,150 USD)">
-                        Sitio Web Pro ($1,150 USD)
+                      <option value="KORE / PRO ($15,000 MXN / ~$750 USD)">
+                        KORE / PRO ($15,000 MXN / ~$750 USD)
                       </option>
-                      <option value="Landing Page ($490 USD)">
-                        Landing Page ($490 USD)
+                      <option value="KORE / LAUNCH ($6,000 MXN / ~$300 USD)">
+                        KORE / LAUNCH ($6,000 MXN / ~$300 USD)
                       </option>
-                      <option value="Tienda Ecommerce ($1,890 USD)">
-                        Tienda Ecommerce ($1,890 USD)
+                      <option value="KORE / ENTERPRISE (Desde $25,000 MXN / ~$1,250 USD)">
+                        KORE / ENTERPRISE (Desde $25,000 MXN)
                       </option>
-                      <option value="Desarrollo a la Medida / Enterprise">
-                        Desarrollo a la Medida / Enterprise
+                      <option value="KORE / CUSTOM (A la Medida - Presupuesto Flexible)">
+                        KORE / CUSTOM (A la Medida - Flexible)
                       </option>
                       <option value="Auditoría Gratuita de mi Sitio Actual">
                         Auditoría Gratuita de mi Sitio Actual

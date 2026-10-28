@@ -1,4 +1,16 @@
+"use client";
+
+import { Check } from "lucide-react";
+
 export default function PricingSection() {
+  const handleSelectPlan = (planName: string) => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("kore:select-plan", { detail: { plan: planName } })
+      );
+    }
+  };
+
   return (
     <section
       className="relative py-24 lg:py-32 border-b border-[#1E2230] overflow-hidden bg-[#08090C]"
@@ -19,8 +31,8 @@ export default function PricingSection() {
             <span className="text-stroke-white">SIN LETRA</span><br />
             <span className="text-[#00D2FF]">CHICA.</span>
           </h2>
-          <p className="text-sm text-[#8A90A6] mt-4 font-mono">
-            Precios de este trimestre. Tomamos 5 proyectos nuevos al mes para garantizar estándar enterprise.
+          <p className="text-sm text-[#8A90A6] mt-4 font-mono max-w-2xl">
+            Montos claros en moneda nacional con equivalencia en USD. Sin costes ocultos ni mensualidades imprevistas.
           </p>
         </div>
 
@@ -52,181 +64,259 @@ export default function PricingSection() {
           </div>
         </div>
 
-        {/* Pricing Plans Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {/* Tier 1: Landing Page */}
-          <div className="p-8 bg-[#0C0E14] border border-[#1E2230] flex flex-col justify-between">
+        {/* 4 Pricing Plans Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+          {/* Card 1: KORE / LAUNCH */}
+          <div className="p-6 lg:p-7 bg-[#0C0E14] border border-[#1E2230] hover:border-[#0052FF]/60 hover:shadow-[0_0_30px_rgba(0,82,255,0.15)] transition-all duration-300 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">
+                <span className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider font-semibold">
                   KORE / LAUNCH
                 </span>
-                <span className="font-mono text-xs text-[#8A90A6]">Pago único</span>
-              </div>
-              <div className="mb-6">
-                <span className="font-display font-black text-5xl text-white">
-                  $490
-                </span>
-                <span className="font-mono text-xs text-[#8A90A6] block uppercase mt-1">
-                  USD • Entrega 5-7 días
+                <span className="font-mono text-[11px] text-[#8A90A6] px-2 py-0.5 bg-[#12141C] border border-[#1E2230]">
+                  One-Page
                 </span>
               </div>
+
+              <div className="mb-6 pb-6 border-b border-[#1E2230]">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
+                    $6,000
+                  </span>
+                  <span className="font-mono text-xs font-bold text-[#8A90A6]">
+                    MXN
+                  </span>
+                </div>
+                <span className="font-mono text-[11px] text-[#8A90A6] block uppercase mt-2 tracking-wide font-medium">
+                  ~$300 USD • ENTREGA 5-7 DÍAS
+                </span>
+              </div>
+
               <ul className="space-y-3 font-sans text-xs text-[#C4C9D9] mb-8">
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>One-page layout optimizado para conversión rápida</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>One-page layout optimizado para conversión</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Copywriting persuasivo y arquitectura de ventas</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>Integración CRM directo y botón WhatsApp API</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Integración con CRM / WhatsApp API</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>Optimización responsive para móviles 100%</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>100% responsive optimizado para móviles</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>SEO técnico inicial e indexación en Google</span>
                 </li>
               </ul>
             </div>
+
             <a
-              className="w-full py-3 border border-[#1E2230] bg-[#12141C] text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:border-[#0052FF] hover:text-[#00D2FF] transition-all"
               href="#contacto"
+              onClick={() => handleSelectPlan("KORE / LAUNCH ($6,000 MXN / ~$300 USD)")}
+              className="w-full py-3.5 border border-[#1E2230] bg-[#12141C] text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:border-[#0052FF] hover:text-[#00D2FF] hover:bg-[#161A26] transition-all block"
             >
               QUIERO EMPEZAR →
             </a>
           </div>
 
-          {/* Tier 2: Sitio Web Pro (Featured / Blue Highlight) */}
-          <div className="p-8 bg-[#0F131E] border-2 border-[#0052FF] shadow-[0_0_50px_rgba(0,82,255,0.3)] flex flex-col justify-between relative">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#0052FF] text-white font-mono text-[11px] font-bold uppercase tracking-widest shadow-md">
+          {/* Card 2: KORE / PRO (Featured / Blue Electric Highlight) */}
+          <div className="p-6 lg:p-7 bg-[#0F131E] border-2 border-[#0052FF] shadow-[0_0_50px_rgba(0,82,255,0.35)] flex flex-col justify-between relative mt-3 md:mt-0">
+            {/* Top Badge */}
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#0052FF] text-white font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(0,82,255,0.7)] whitespace-nowrap">
               MÁS SOLICITADO
             </div>
+
             <div>
-              <div className="flex items-center justify-between mb-4 mt-2">
-                <span className="font-mono text-xs text-[#00D2FF] font-bold uppercase tracking-wider">
+              <div className="flex items-center justify-between mb-4 mt-1">
+                <span className="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-bold">
                   KORE / PRO
                 </span>
-                <span className="font-mono text-xs text-[#00D2FF]">
-                  Proyecto Completo
+                <span className="font-mono text-[11px] text-[#00D2FF] px-2 py-0.5 bg-[#0052FF]/20 border border-[#0052FF]/50 font-semibold">
+                  Sitio Completo
                 </span>
               </div>
-              <div className="mb-6">
-                <span className="font-display font-black text-5xl text-[#00D2FF]">
-                  $1,150
-                </span>
-                <span className="font-mono text-xs text-[#8A90A6] block uppercase mt-1">
-                  USD • Entrega 10-15 días
+
+              <div className="mb-6 pb-6 border-b border-[#0052FF]/30">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-display font-black text-3xl sm:text-4xl text-[#00D2FF] tracking-tight">
+                    $15,000
+                  </span>
+                  <span className="font-mono text-xs font-bold text-[#00D2FF]">
+                    MXN
+                  </span>
+                </div>
+                <span className="font-mono text-[11px] text-[#8A90A6] block uppercase mt-2 tracking-wide font-medium">
+                  ~$750 USD • ENTREGA 10-15 DÍAS
                 </span>
               </div>
-              <ul className="space-y-3 font-sans text-xs text-[#E1E4EE] mb-8">
+
+              <ul className="space-y-3 font-sans text-xs text-[#F1F3F9] mb-8">
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>4 a 7 páginas estratégicas (Inicio, Servicios, Nosotros, Casos, Contacto)</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>4 a 7 páginas estratégicas de alto impacto</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>CMS autoadministrable sin necesidad de código</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Score 95+ Core Web Vitals y velocidad extrema</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Google Analytics 4 &amp; Meta Pixel configurados</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>1 año de hosting cloud gestionado + dominio incluido</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>1 año de hosting cloud gestionado + dominio</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>Optimización SEO + visibilidad en IA (ChatGPT/Perplexity)</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>SEO y visibilidad en motores de IA (ChatGPT / Perplexity)</span>
                 </li>
               </ul>
             </div>
+
             <a
-              className="w-full py-3.5 bg-[#0052FF] text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:bg-[#0066FF] hover:shadow-[0_0_30px_rgba(0,82,255,0.7)] transition-all"
               href="#contacto"
+              onClick={() => handleSelectPlan("KORE / PRO ($15,000 MXN / ~$750 USD)")}
+              className="w-full py-3.5 bg-[#0052FF] text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:bg-[#0066FF] hover:shadow-[0_0_35px_rgba(0,82,255,0.7)] transition-all block"
             >
               QUIERO EL SITIO PRO →
             </a>
           </div>
 
-          {/* Tier 3: Enterprise */}
-          <div className="p-8 bg-[#0C0E14] border border-[#1E2230] flex flex-col justify-between">
+          {/* Card 3: KORE / ENTERPRISE */}
+          <div className="p-6 lg:p-7 bg-[#0C0E14] border border-[#1E2230] hover:border-[#0052FF]/60 hover:shadow-[0_0_30px_rgba(0,82,255,0.15)] transition-all duration-300 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">
+                <span className="font-mono text-xs text-[#8A90A6] uppercase tracking-wider font-semibold">
                   KORE / ENTERPRISE
                 </span>
-                <span className="font-mono text-xs text-[#8A90A6]">A Medida</span>
-              </div>
-              <div className="mb-6">
-                <span className="font-display font-black text-5xl text-white">
-                  Desde $1,890
-                </span>
-                <span className="font-mono text-xs text-[#8A90A6] block uppercase mt-1">
-                  USD • Cotización Técnica
+                <span className="font-mono text-[11px] text-[#8A90A6] px-2 py-0.5 bg-[#12141C] border border-[#1E2230]">
+                  Escalable
                 </span>
               </div>
+
+              <div className="mb-6 pb-6 border-b border-[#1E2230]">
+                <div className="flex items-baseline gap-1.5 flex-wrap">
+                  <span className="font-mono text-xs font-bold text-[#8A90A6] uppercase">
+                    Desde
+                  </span>
+                  <span className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
+                    $25,000
+                  </span>
+                  <span className="font-mono text-xs font-bold text-[#8A90A6]">
+                    MXN
+                  </span>
+                </div>
+                <span className="font-mono text-[11px] text-[#8A90A6] block uppercase mt-2 tracking-wide font-medium">
+                  ~$1,250 USD • BASE DE PROYECTO
+                </span>
+              </div>
+
               <ul className="space-y-3 font-sans text-xs text-[#C4C9D9] mb-8">
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>Plataformas SaaS, portales o tiendas ecommerce avanzadas</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Plataformas SaaS o portales avanzados</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>Catálogo ilimitado de productos y pasarelas mundiales</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Catálogo e-commerce y pasarelas mundiales</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>Integraciones API a medida, webhooks y bases de datos</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Integraciones API / webhooks / bases de datos</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>SLA de soporte técnico prioritario 24/7</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>SLA prioritario de soporte 24/7</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-[#00D2FF] font-bold">✓</span>
-                  <span>Auditoría de ciberseguridad y backups automatizados</span>
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Auditoría de seguridad y backups</span>
                 </li>
               </ul>
             </div>
+
             <a
-              className="w-full py-3 border border-[#1E2230] bg-[#12141C] text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:border-[#0052FF] hover:text-[#00D2FF] transition-all"
               href="#contacto"
+              onClick={() => handleSelectPlan("KORE / ENTERPRISE (Desde $25,000 MXN / ~$1,250 USD)")}
+              className="w-full py-3.5 border border-[#1E2230] bg-[#12141C] text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:border-[#0052FF] hover:text-[#00D2FF] hover:bg-[#161A26] transition-all block"
             >
-              PEDIR COTIZACIÓN →
+              COTIZAR ENTERPRISE →
+            </a>
+          </div>
+
+          {/* Card 4: KORE / CUSTOM */}
+          <div className="p-6 lg:p-7 bg-[#0C0E14] border border-[#1E2230] hover:border-[#00D2FF]/60 hover:shadow-[0_0_30px_rgba(0,210,255,0.18)] transition-all duration-300 flex flex-col justify-between relative">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-bold">
+                  KORE / CUSTOM
+                </span>
+                <span className="font-mono text-[10px] text-[#00D2FF] px-2 py-0.5 bg-[#00D2FF]/10 border border-[#00D2FF]/30 font-semibold uppercase tracking-wider">
+                  Presupuesto Flexible
+                </span>
+              </div>
+
+              <div className="mb-6 pb-6 border-b border-[#1E2230]">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
+                    A la Medida
+                  </span>
+                </div>
+                <span className="font-mono text-[11px] text-[#8A90A6] block uppercase mt-2 tracking-wide font-medium">
+                  ADAPTADO A TU ALCANCE Y OBJETIVOS
+                </span>
+              </div>
+
+              <ul className="space-y-3 font-sans text-xs text-[#C4C9D9] mb-8">
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Alcance definido según los requerimientos exactos de tu negocio</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Ajuste de arquitectura, módulos y funcionalidades bajo demanda</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Integración con sistemas existentes o herramientas heredadas</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Planificación por fases de entrega o desarrollo por sprints</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
+                  <span>Asesoría técnica inicial y levantamiento de requerimientos sin costo</span>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="#contacto"
+              onClick={() => handleSelectPlan("KORE / CUSTOM (A la Medida - Presupuesto Flexible)")}
+              className="w-full py-3.5 border border-[#00D2FF]/50 bg-[#00D2FF]/[0.04] backdrop-blur-sm text-center font-mono text-xs font-bold uppercase tracking-widest text-[#00D2FF] hover:bg-[#0052FF] hover:border-[#0052FF] hover:text-white hover:shadow-[0_0_30px_rgba(0,82,255,0.6)] transition-all block"
+            >
+              DISEÑAR MI PLAN →
             </a>
           </div>
         </div>
 
-        {/* E-Commerce Callout Strip */}
-        <div className="mt-16 p-8 border border-[#1E2230] bg-[#0C0E14] flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <span className="font-mono text-xs text-[#00D2FF] uppercase font-bold tracking-wider">
-              ¿BUSCAS TIENDA ONLINE EXCLUSIVA?
-            </span>
-            <h3 className="font-display font-black text-2xl uppercase text-white mt-1">
-              E-Commerce &amp; Catálogo Digital de Alta Conversión
-            </h3>
-            <p className="text-xs text-[#8A90A6] mt-1 max-w-xl">
-              Desde $1,890 USD con carrito en 1 clic, pasarelas Stripe/MercadoPago y sincronización de inventario en tiempo real.
-            </p>
-          </div>
-          <a
-            className="px-6 py-3 border border-[#00D2FF] text-[#00D2FF] font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#00D2FF] hover:text-black transition-all shrink-0"
-            href="#contacto"
-          >
-            COTIZAR TIENDA →
-          </a>
+        {/* Small Print / Footnote */}
+        <div className="mt-12 pt-6 border-t border-[#1E2230] text-center">
+          <p className="font-mono text-xs text-[#8A90A6] max-w-3xl mx-auto leading-relaxed">
+            *Precios más IVA en caso de requerir factura. Esquema de pago: 50% anticipo y 50% contra entrega.
+          </p>
         </div>
       </div>
     </section>
