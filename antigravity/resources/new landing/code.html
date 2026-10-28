@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Kore Web Studio | Presencia Digital que Vende y Convierte</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&amp;family=Syne:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: "#08090C",
+              obsidian: "#0C0E14",
+              card: "#12141C",
+              border: "#1E2230",
+              blue: "#0052FF",
+              electric: "#0066FF",
+              cyan: "#00D2FF",
+              glow: "rgba(0, 82, 255, 0.35)",
+              muted: "#8A90A6"
+            }
+          },
+          fontFamily: {
+            display: ["Montserrat", "Syne", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #08090C;
+        color: #F1F3F9;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+    }
+    
+    /* Outlined typography effect inspired by reference */
+    .text-stroke-white {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+      color: transparent;
+    }
+    .text-stroke-blue {
+      -webkit-text-stroke: 1.5px #00D2FF;
+      color: transparent;
+    }
+    .text-stroke-light {
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+      color: transparent;
+    }
+    @media (min-width: 768px) {
+      .text-stroke-white {
+        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.45);
+      }
+      .text-stroke-blue {
+        -webkit-text-stroke: 2px #00D2FF;
+      }
+      .text-stroke-light {
+        -webkit-text-stroke: 3px rgba(255, 255, 255, 0.25);
+      }
+    }
+
+    /* Ambient noise & glow utilities */
+    .glow-blue {
+      box-shadow: 0 0 50px -10px rgba(0, 82, 255, 0.4);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 40px -8px rgba(0, 210, 255, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-[#08090C] text-[#F1F3F9] font-body selection:bg-[#0052FF] selection:text-white">
+<!-- =========================================================================
+       NAVIGATION BAR (Kore Web Studio)
+       ========================================================================= -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#08090C]/90 backdrop-blur-xl border-b border-brand-border/80">
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Kore Web Studio Logo" class="h-9 w-9 object-contain drop-shadow-[0_0_12px_rgba(0,82,255,0.6)] group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5nBbo1C100K84p1cCJsadDUzWxnaepr9kW5IbImYVLbtCK_9gXsxNKiXo0o6Z7tPGASHmB_QobyNJrvdafUr7PcSvPJzIM410xkC8V2T0-KVAc7ltDxrQViY3pGwAb4SnpmsKfvCBgGRoKVKIeYcht1w_wVSM4s6HYAmXSOM5tXqIbn1AIU9l_A2_znqrOzewrvwVbPDbqxUXPuqUGv70dNPD5vnADeGvBBU26Alua5tpSaLUOAUN"/>
+<div class="flex flex-col">
+<span class="font-display font-black text-xl tracking-tight text-white uppercase leading-none">
+            Kore <span class="text-[#00D2FF]">Studio</span>
+</span>
+<span class="font-mono text-[10px] tracking-widest text-[#8A90A6] uppercase mt-0.5">&lt; Development • Design &gt;</span>
+</div>
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8 font-mono text-[13px] uppercase tracking-wider text-[#A0A6BE]">
+<a class="hover:text-[#00D2FF] transition-colors" href="#servicios">Servicios</a>
+<a class="hover:text-[#00D2FF] transition-colors" href="#proyectos">Proyectos</a>
+<a class="hover:text-[#00D2FF] transition-colors" href="#testimonios">Testimonios</a>
+<a class="hover:text-[#00D2FF] transition-colors" href="#precios">Precios</a>
+<a class="hover:text-[#00D2FF] transition-colors" href="#faq">FAQ</a>
+</nav>
+<!-- Action CTA -->
+<div class="flex items-center gap-4">
+<a class="px-5 py-2.5 rounded-none border border-[#0052FF] bg-[#0052FF] text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#0066FF] hover:border-[#00D2FF] hover:shadow-[0_0_25px_rgba(0,82,255,0.7)] transition-all" href="#contacto">
+          Iniciar Proyecto
+        </a>
+</div>
+</div>
+</header>
+<!-- =========================================================================
+       HERO SECTION (High-conversion reference style with massive typography & curve glows)
+       ========================================================================= -->
+<section class="relative pt-32 pb-24 md:pt-40 md:pb-36 overflow-hidden border-b border-brand-border">
+<!-- Curved Cyber Waves Graphic Overlay (Cobalt & Cyan neon waves) -->
+<div class="absolute right-[-15%] top-[-5%] w-[850px] h-[850px] pointer-events-none opacity-40 md:opacity-75 z-0">
+<svg class="w-full h-full" fill="none" viewbox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+<circle cx="450" cy="350" r="380" stroke="url(#electricGrad)" stroke-dasharray="8 6" stroke-width="1.5"></circle>
+<circle cx="450" cy="350" r="320" stroke="url(#electricGrad)" stroke-width="2"></circle>
+<circle cx="450" cy="350" r="260" stroke="#00D2FF" stroke-opacity="0.6" stroke-width="1.2"></circle>
+<circle cx="450" cy="350" r="200" stroke="#0052FF" stroke-opacity="0.8" stroke-width="2.5"></circle>
+<path d="M 100 100 C 350 150, 480 300, 700 700" stroke="#00D2FF" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M 150 50 C 380 120, 520 280, 780 620" stroke="#0052FF" stroke-width="3"></path>
+<path d="M 220 20 C 420 100, 560 250, 800 550" stroke="#00D2FF" stroke-width="1.5"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="electricGrad" x1="0" x2="800" y1="0" y2="800">
+<stop stop-color="#00D2FF"></stop>
+<stop offset="0.5" stop-color="#0052FF"></stop>
+<stop offset="1" stop-color="#08090C" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<!-- Background Radial Ambient Glows -->
+<div class="absolute top-1/4 left-10 w-96 h-96 bg-[#0052FF]/15 blur-[140px] pointer-events-none"></div>
+<div class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[#00D2FF]/10 blur-[160px] pointer-events-none"></div>
+<div class="relative z-10 max-w-[1360px] mx-auto px-5 lg:px-10">
+<!-- Eyebrow Tag -->
+<div class="flex items-center gap-2 mb-6">
+<span class="inline-block w-2.5 h-2.5 bg-[#00D2FF] shadow-[0_0_10px_#00D2FF]"></span>
+<p class="font-mono text-xs md:text-sm text-[#00D2FF] font-semibold tracking-widest uppercase">
+          CLIENTES, NO SOLO VISITAS. INGENIERÍA WEB &amp; HIGH-CONVERSION.
+        </p>
+</div>
+<!-- Reference Style Huge Duo/Outlined Headline -->
+<div class="max-w-6xl">
+<h1 class="font-display font-black text-5xl sm:text-7xl lg:text-[104px] tracking-tight uppercase leading-[0.92] text-white">
+          CONSTRUIMOS TU<br/>
+<span class="text-white">PRESENCIA</span> <span class="text-stroke-white">DIGITAL</span><br/>
+<span class="text-[#00D2FF] drop-shadow-[0_0_35px_rgba(0,210,255,0.4)]">QUE CIERRA.</span>
+</h1>
+</div>
+<!-- Subtitle description & CTA Buttons -->
+<div class="mt-8 md:mt-10 max-w-2xl">
+<p class="text-base sm:text-lg text-[#9EA6BC] leading-relaxed font-normal">
+          Ahora mismo alguien busca lo que tú vendes. Construimos el sitio que hace que te elijan a ti, sin plantillas lentas y con arquitectura cloud de última generación.
+        </p>
+<!-- CTA row modeled on reference (solid high-impact primary + outline secondary) -->
+<div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<a class="px-8 py-4 bg-[#0052FF] text-white font-mono text-xs md:text-sm font-bold uppercase tracking-widest text-center hover:bg-[#0066FF] hover:shadow-[0_0_35px_rgba(0,82,255,0.8)] transition-all flex items-center justify-center gap-3" href="#contacto">
+<span>INICIAR PROYECTO</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="px-8 py-4 border border-[#2A3048] bg-[#0E1118]/80 text-[#C4C9D9] font-mono text-xs md:text-sm font-semibold uppercase tracking-widest text-center hover:border-[#00D2FF] hover:text-[#00D2FF] transition-all flex items-center justify-center gap-2" href="#proyectos">
+<span>AUDITORÍA GRATIS DE TU SITIO →</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       LOGOS / PARTNERS / TRUST MARQUEE (Mono dark tech bar)
+       ========================================================================= -->
+<section class="py-8 bg-[#0A0C12] border-b border-brand-border">
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10">
+<p class="font-mono text-[11px] text-[#636B82] uppercase tracking-[0.25em] text-center mb-6">
+        MARCAS &amp; TECNOLOGÍA EN LAS QUE OPERA KORE WEB STUDIO
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 items-center justify-center opacity-65 grayscale hover:grayscale-0 transition-all font-mono text-xs text-[#8A90A6]">
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> NEXT.JS 15
+        </div>
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> REACT
+        </div>
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> TYPESCRIPT
+        </div>
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> AWS CLOUD
+        </div>
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> STRIPE API
+        </div>
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> VERCEL EDGE
+        </div>
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> POSTGRESQL
+        </div>
+<div class="flex items-center justify-center gap-2 tracking-wider py-2 bg-brand-obsidian/40 border border-brand-border/40">
+<span class="text-[#00D2FF] font-bold">●</span> TAILWIND
+        </div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 01: CAPACIDADES / SERVICIOS ("TODO LO QUE NECESITAS PARA VENDER EN LÍNEA")
+       Reference layout: Big header with stroke word, subtle "01" watermark, 6 technical cards
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden" id="servicios">
+<!-- Big faint section numeral watermark in background like reference -->
+<div class="absolute right-6 top-8 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      01
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+            [ 01 — CAPACIDADES CORE ]
+          </span>
+<h2 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-none">
+            TODO LO QUE<br/>
+            NECESITAS<br/>
+            PARA <span class="text-stroke-white">VENDER</span> EN<br/>
+<span class="text-[#00D2FF]">LÍNEA</span>
+</h2>
+</div>
+<p class="font-body text-[#8A90A6] max-w-sm text-sm leading-relaxed border-l-2 border-[#0052FF] pl-4">
+          Escoge solo lo que tu negocio necesita hoy. Este servicio está hecho para lo mismo: que te encuentren, que confíen en ti y que te compren.
+        </p>
+</div>
+<!-- 6-Grid Core Capabilities (Numbered Minimalist Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service 01 -->
+<div class="group p-8 bg-brand-obsidian border border-brand-border hover:border-[#0052FF] transition-all relative">
+<div class="flex items-center justify-between mb-6">
+<span class="font-mono text-xs text-[#00D2FF] font-bold tracking-widest">/ 01</span>
+<span class="material-symbols-outlined text-[#8A90A6] group-hover:text-[#00D2FF] transition-colors">code</span>
+</div>
+<h3 class="font-display font-black text-lg uppercase tracking-wider text-white mb-3">
+            DESARROLLO WEB
+          </h3>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-6 font-normal">
+            Sitios rápidos, modernos y optimizados para Google (SEO). No son tarjetas de visita: son canales donde entran clientes de manera predecible.
+          </p>
+<a class="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-semibold group-hover:underline flex items-center gap-1" href="#contacto">
+            VER MÁS <span>→</span>
+</a>
+</div>
+<!-- Service 02 -->
+<div class="group p-8 bg-brand-obsidian border border-brand-border hover:border-[#0052FF] transition-all relative">
+<div class="flex items-center justify-between mb-6">
+<span class="font-mono text-xs text-[#00D2FF] font-bold tracking-widest">/ 02</span>
+<span class="material-symbols-outlined text-[#8A90A6] group-hover:text-[#00D2FF] transition-colors">shopping_cart</span>
+</div>
+<h3 class="font-display font-black text-lg uppercase tracking-wider text-white mb-3">
+            TIENDAS ECOMMERCE
+          </h3>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-6 font-normal">
+            Tu negocio abierto 24/7. Tiendas online completas con pasarelas de pago seguro (Stripe/PayPal), checkout optimizado y experiencia fluida.
+          </p>
+<a class="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-semibold group-hover:underline flex items-center gap-1" href="#contacto">
+            VER MÁS <span>→</span>
+</a>
+</div>
+<!-- Service 03 -->
+<div class="group p-8 bg-brand-obsidian border border-brand-border hover:border-[#0052FF] transition-all relative">
+<div class="flex items-center justify-between mb-6">
+<span class="font-mono text-xs text-[#00D2FF] font-bold tracking-widest">/ 03</span>
+<span class="material-symbols-outlined text-[#8A90A6] group-hover:text-[#00D2FF] transition-colors">brush</span>
+</div>
+<h3 class="font-display font-black text-lg uppercase tracking-wider text-white mb-3">
+            BRANDING DIGITAL &amp; UI/UX
+          </h3>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-6 font-normal">
+            Identidad visual profesional que diferencia tu negocio. Generamos la confianza que la audiencia necesita antes de dar clic y cotizar.
+          </p>
+<a class="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-semibold group-hover:underline flex items-center gap-1" href="#contacto">
+            VER MÁS <span>→</span>
+</a>
+</div>
+<!-- Service 04 -->
+<div class="group p-8 bg-brand-obsidian border border-brand-border hover:border-[#0052FF] transition-all relative">
+<div class="flex items-center justify-between mb-6">
+<span class="font-mono text-xs text-[#00D2FF] font-bold tracking-widest">/ 04</span>
+<span class="material-symbols-outlined text-[#8A90A6] group-hover:text-[#00D2FF] transition-colors">rocket_launch</span>
+</div>
+<h3 class="font-display font-black text-lg uppercase tracking-wider text-white mb-3">
+            SEO + AI SEARCH
+          </h3>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-6 font-normal">
+            Posicionamiento en Google + visibilidad en ChatGPT, Claude, Gemini y Perplexity. Que los clientes te encuentren cuando le preguntan a la IA.
+          </p>
+<a class="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-semibold group-hover:underline flex items-center gap-1" href="#contacto">
+            VER MÁS <span>→</span>
+</a>
+</div>
+<!-- Service 05 -->
+<div class="group p-8 bg-brand-obsidian border border-brand-border hover:border-[#0052FF] transition-all relative">
+<div class="flex items-center justify-between mb-6">
+<span class="font-mono text-xs text-[#00D2FF] font-bold tracking-widest">/ 05</span>
+<span class="material-symbols-outlined text-[#8A90A6] group-hover:text-[#00D2FF] transition-colors">cloud_sync</span>
+</div>
+<h3 class="font-display font-black text-lg uppercase tracking-wider text-white mb-3">
+            HOSTING &amp; CLOUD CARE
+          </h3>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-6 font-normal">
+            Soporte técnico continuo, actualizaciones de seguridad, certificados SSL y optimización 24/7 para que tu sitio funcione perfecto siempre.
+          </p>
+<a class="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-semibold group-hover:underline flex items-center gap-1" href="#contacto">
+            VER MÁS <span>→</span>
+</a>
+</div>
+<!-- Service 06 -->
+<div class="group p-8 bg-brand-obsidian border border-brand-border hover:border-[#0052FF] transition-all relative">
+<div class="flex items-center justify-between mb-6">
+<span class="font-mono text-xs text-[#00D2FF] font-bold tracking-widest">/ 06</span>
+<span class="material-symbols-outlined text-[#8A90A6] group-hover:text-[#00D2FF] transition-colors">developer_board</span>
+</div>
+<h3 class="font-display font-black text-lg uppercase tracking-wider text-white mb-3">
+            CONSULTORÍA DIGITAL
+          </h3>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-6 font-normal">
+            Estrategia digital personalizada para escalar tu facturación. Tomamos las decisiones correctas antes de escribir una sola línea de código.
+          </p>
+<a class="font-mono text-xs text-[#00D2FF] uppercase tracking-wider font-semibold group-hover:underline flex items-center gap-1" href="#contacto">
+            VER MÁS <span>→</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 02: PORTAFOLIO ("PROYECTOS QUE HACEN LA DIFERENCIA")
+       Reference layout: 2-3 row grid with project cards + highlighted cyan/electric CTA card
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden" id="proyectos">
+<div class="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      02
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+            [ 02 — CASOS SELECCIONADOS ]
+          </span>
+<h2 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-none">
+            PROYECTOS QUE<br/>
+            HACEN <span class="text-stroke-white">LA</span><br/>
+<span class="text-[#00D2FF]">DIFERENCIA</span>
+</h2>
+</div>
+<a class="px-6 py-3 border border-[#0052FF] bg-[#0052FF]/20 text-[#00D2FF] font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#0052FF] hover:text-white transition-all self-start md:self-end" href="#contacto">
+          INICIAR PROYECTO →
+        </a>
+</div>
+<!-- Portfolio Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Project 1 -->
+<div class="bg-brand-obsidian border border-brand-border flex flex-col group overflow-hidden">
+<div class="h-48 w-full overflow-hidden bg-brand-card relative">
+<img alt="Nexus FinTech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyNsYqYw32s6fRtCbwRx6Miwiam0oYHYtfyoEMS6dxNZdHby8SvfeNxzQdhruqbL2oQQ7Rh0n8LD2QAuKDSX-vN3fiuLYNNwZ8bfZpnIcA2H6ZOHzYx9fMuQj73hR4tXnQgxLVYw03fQp64qLr3O6FzQ9R2nxN83Dlw-sYG4EO9Ei8RCuGnL4VlyRUHfsMupI8Kw9_QW8XLM3bWdwQLKGJ9N8rgpCfwY_KdedVuXw"/>
+<span class="absolute top-3 left-3 bg-[#08090C]/90 text-[#00D2FF] font-mono text-[10px] px-2 py-0.5 border border-[#0052FF]/40">FINTECH / SAAS</span>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h4 class="font-display font-bold text-sm uppercase text-white tracking-wide mb-1">Nexus FinTech Platform</h4>
+<p class="text-xs text-[#8A90A6] leading-relaxed mb-4 flex-1">Plataforma de liquidación de pagos cloud con dashboards analíticos y 99.99% uptime.</p>
+<span class="font-mono text-[11px] text-[#00D2FF] uppercase font-semibold">VER CASO →</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-brand-obsidian border border-brand-border flex flex-col group overflow-hidden">
+<div class="h-48 w-full overflow-hidden bg-brand-card relative">
+<img alt="Aura Luxury" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU-ImJJoxqODXeSTjciXuJFtjsipF5qCLjxBavVz1ILg9uMb5fgvf55qnalQLYh2fE89zwv2Ko_9H8BQOkyp67eMNmQN_LV1l8qIeN1fo-6zDwRuOFq2jfxTzE5Ur1caQp2_-sLWorjLZSoGAfNXCxEOG0vgU7sMKBjh7mCqgfm6k_Ka_t7TLcLbe1zaraYH7Jz4XbXXnRpHvpLlYTZZBDlFAAhewx6o5V4JcA--4"/>
+<span class="absolute top-3 left-3 bg-[#08090C]/90 text-[#00D2FF] font-mono text-[10px] px-2 py-0.5 border border-[#0052FF]/40">INMOBILIARIA DE LUJO</span>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h4 class="font-display font-bold text-sm uppercase text-white tracking-wide mb-1">Aura Residences</h4>
+<p class="text-xs text-[#8A90A6] leading-relaxed mb-4 flex-1">Landing page de conversión inmobiliaria ultra-lujo con tours 3D y captación de leads inversores.</p>
+<span class="font-mono text-[11px] text-[#00D2FF] uppercase font-semibold">VER CASO →</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-brand-obsidian border border-brand-border flex flex-col group overflow-hidden">
+<div class="h-48 w-full overflow-hidden bg-brand-card relative">
+<img alt="Vortex Supply" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo3XpLS8vrbBvcBiLxRKKbHSRbgyLRzH8ytWfZ7qAC4lIiwGmtUGRpKNfcjwnfVzXkTfW_3Pct1t_QXcmZ3ITWEEGAj82-8LcUyR_UGQ7R7QBEbiDCTiz5clGKah7etB5gsS0WnSuwxInRKTxjQySLRrLB8Txp6e3ycx80Wl_Y8J8lAqyoUOYfKehXNaNsGrKe6xPhwQmbHFE5ZQye79RHPoy-qdrrbksslGXCTRk"/>
+<span class="absolute top-3 left-3 bg-[#08090C]/90 text-[#00D2FF] font-mono text-[10px] px-2 py-0.5 border border-[#0052FF]/40">ECOMMERCE GLOBAL</span>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h4 class="font-display font-bold text-sm uppercase text-white tracking-wide mb-1">Vortex Store &amp; Retail</h4>
+<p class="text-xs text-[#8A90A6] leading-relaxed mb-4 flex-1">Tienda headless de alto tráfico con checkout en 1 clic y sincronización instantánea de stock.</p>
+<span class="font-mono text-[11px] text-[#00D2FF] uppercase font-semibold">VER CASO →</span>
+</div>
+</div>
+<!-- High-Impact Reference-Style Card: ¿TU NEGOCIO AQUÍ? (Vibrant Electric Blue Background) -->
+<div class="bg-gradient-to-br from-[#0052FF] to-[#0038B6] border border-[#00D2FF] p-6 flex flex-col justify-between text-white relative overflow-hidden shadow-[0_0_40px_rgba(0,82,255,0.4)]">
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-[#00D2FF]/20 rounded-full blur-2xl"></div>
+<div>
+<span class="font-mono text-[11px] uppercase tracking-widest text-[#00D2FF] font-bold block mb-2">/ PRÓXIMO CASO</span>
+<h3 class="font-display font-black text-2xl uppercase leading-tight mb-3">
+              ¿TU NEGOCIO AQUÍ?
+            </h3>
+<p class="text-xs text-white/90 leading-relaxed">
+              Tu caso puede ser el siguiente. En 24 horas te entregamos un plan técnico a tu medida.
+            </p>
+</div>
+<a class="mt-6 w-full py-3 bg-white text-[#002682] font-mono text-xs font-bold uppercase tracking-widest text-center hover:bg-[#00D2FF] hover:text-black transition-all" href="#contacto">
+            INICIAR PROYECTO →
+          </a>
+</div>
+</div>
+<!-- Secondary Buttons row below portfolio -->
+<div class="mt-12 flex flex-wrap items-center justify-center gap-4">
+<a class="font-mono text-xs uppercase tracking-widest px-6 py-3 border border-brand-border text-[#C4C9D9] hover:border-[#00D2FF] hover:text-[#00D2FF] transition-all" href="#contacto">
+          VER MÁS PROYECTOS →
+        </a>
+<a class="font-mono text-xs uppercase tracking-widest px-6 py-3 border border-[#0052FF] text-[#00D2FF] bg-[#0052FF]/10 hover:bg-[#0052FF] hover:text-white transition-all" href="#contacto">
+          VER CASOS DE ÉXITO A FONDO →
+        </a>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 03: PRUEBA SOCIAL / TESTIMONIOS ("LO QUE DICEN QUIENES YA VENDEN")
+       Reference layout: 3 clean cards with numbered indices and metric tags
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden" id="testimonios">
+<div class="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      03
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="mb-16">
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+          [ 03 — RESULTADOS COMPROBADOS ]
+        </span>
+<h2 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-none">
+          LO QUE DICEN<br/>
+          QUIENES YA <span class="text-[#00D2FF]">VENDEN</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Review 1 -->
+<div class="p-8 bg-brand-obsidian border border-brand-border flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs text-[#00D2FF] font-bold">/ 01</span>
+<span class="font-mono text-xs text-[#00D2FF] bg-[#0052FF]/20 px-2 py-0.5 border border-[#0052FF]/40">3x RETORNO</span>
+</div>
+<p class="text-sm text-[#C4C9D9] leading-relaxed mb-6 font-normal">
+              "No siempre teníamos las ideas claras, pero el equipo de Kore siempre aportó soluciones estratégicas. Logramos triplicar el valor de nuestra inversión en ventas en menos de 90 días."
+            </p>
+</div>
+<div class="border-t border-brand-border pt-4 flex items-center justify-between">
+<div>
+<p class="font-display font-bold text-xs uppercase text-white">Gustavo Carrillo</p>
+<p class="text-[11px] text-[#8A90A6]">CEO — IMVEC Industrial</p>
+</div>
+<span class="font-mono text-[10px] text-[#8A90A6]">VER CASO →</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-8 bg-brand-obsidian border border-brand-border flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs text-[#00D2FF] font-bold">/ 02</span>
+<span class="font-mono text-xs text-[#00D2FF] bg-[#0052FF]/20 px-2 py-0.5 border border-[#0052FF]/40">+40% CONVERSIÓN</span>
+</div>
+<p class="text-sm text-[#C4C9D9] leading-relaxed mb-6 font-normal">
+              "Excelente compromiso, profesionalismo y nivel de servicio de alta ingeniería. La velocidad de carga y la experiencia visual cambiaron radicalmente la respuesta de nuestros clientes."
+            </p>
+</div>
+<div class="border-t border-brand-border pt-4 flex items-center justify-between">
+<div>
+<p class="font-display font-bold text-xs uppercase text-white">Ricardo Lara</p>
+<p class="text-[11px] text-[#8A90A6]">Director — Serendipia CDMX</p>
+</div>
+<span class="font-mono text-[10px] text-[#8A90A6]">VER CASO →</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="p-8 bg-brand-obsidian border border-brand-border flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs text-[#00D2FF] font-bold">/ 03</span>
+<span class="font-mono text-xs text-[#00D2FF] bg-[#0052FF]/20 px-2 py-0.5 border border-[#0052FF]/40">100/100 SPEED</span>
+</div>
+<p class="text-sm text-[#C4C9D9] leading-relaxed mb-6 font-normal">
+              "Nuestro nuevo sitio web optimizó la captación de clientes calificados y aumentó nuestras ventas un 45% en dos meses. Cero fallos técnicos y soporte inmediato cuando se requiere."
+            </p>
+</div>
+<div class="border-t border-brand-border pt-4 flex items-center justify-between">
+<div>
+<p class="font-display font-bold text-xs uppercase text-white">Jesús Bernal</p>
+<p class="text-[11px] text-[#8A90A6]">Fundador — Red Box Solutions</p>
+</div>
+<span class="font-mono text-[10px] text-[#8A90A6]">VER CASO →</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 04: PRECIOS TRANSPARENTES ("PRECIOS SIN LETRA CHICA.")
+       Reference layout: 3 metric chips at top + structured 3-4 pricing columns
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden" id="precios">
+<div class="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      04
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="mb-12">
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+          [ 04 — INVERSIÓN TRANSPARENTE ]
+        </span>
+<h2 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-none">
+          PRECIOS<br/>
+<span class="text-stroke-white">SIN LETRA</span><br/>
+<span class="text-[#00D2FF]">CHICA.</span>
+</h2>
+<p class="text-sm text-[#8A90A6] mt-4 font-mono">
+          Precios de este trimestre. Tomamos 5 proyectos nuevos al mes para garantizar estándar enterprise.
+        </p>
+</div>
+<!-- Top 3 Metrics Chips as in Reference -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+<div class="p-4 bg-brand-obsidian border border-brand-border flex flex-col">
+<span class="font-display font-black text-3xl text-[#00D2FF]">3x+</span>
+<span class="font-mono text-xs text-[#8A90A6] uppercase mt-1">Retorno de inversión en ventas</span>
+</div>
+<div class="p-4 bg-brand-obsidian border border-brand-border flex flex-col">
+<span class="font-display font-black text-3xl text-white">+40%</span>
+<span class="font-mono text-xs text-[#8A90A6] uppercase mt-1">Más ventas en 2 meses promedio</span>
+</div>
+<div class="p-4 bg-brand-obsidian border border-brand-border flex flex-col">
+<span class="font-display font-black text-3xl text-[#00D2FF]">12</span>
+<span class="font-mono text-xs text-[#8A90A6] uppercase mt-1">Proyectos publicados con éxito</span>
+</div>
+</div>
+<!-- Pricing Plans Columns -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+<!-- Tier 1: Landing Page -->
+<div class="p-8 bg-brand-obsidian border border-brand-border flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">KORE / LAUNCH</span>
+<span class="font-mono text-xs text-[#8A90A6]">Pago único</span>
+</div>
+<div class="mb-6">
+<span class="font-display font-black text-5xl text-white">$490</span>
+<span class="font-mono text-xs text-[#8A90A6] block uppercase mt-1">USD • Entrega 5-7 días</span>
+</div>
+<ul class="space-y-3 font-body text-xs text-[#C4C9D9] mb-8">
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>One-page layout optimizado para conversión rápida</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Copywriting persuasivo y arquitectura de ventas</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Integración CRM directo y botón WhatsApp API</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Optimización responsive para móviles 100%</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>SEO técnico inicial e indexación en Google</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-3 border border-brand-border bg-brand-card text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:border-[#0052FF] hover:text-[#00D2FF] transition-all" href="#contacto">
+            QUIERO EMPEZAR →
+          </a>
+</div>
+<!-- Tier 2: Sitio Web Pro (Featured / Most Popular - Blue Highlight) -->
+<div class="p-8 bg-[#0F131E] border-2 border-[#0052FF] shadow-[0_0_50px_rgba(0,82,255,0.3)] flex flex-col justify-between relative">
+<!-- Featured Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#0052FF] text-white font-mono text-[11px] font-bold uppercase tracking-widest shadow-md">
+            MÁS SOLICITADO
+          </div>
+<div>
+<div class="flex items-center justify-between mb-4 mt-2">
+<span class="font-mono text-xs text-[#00D2FF] font-bold uppercase tracking-wider">KORE / PRO</span>
+<span class="font-mono text-xs text-[#00D2FF]">Proyecto Completo</span>
+</div>
+<div class="mb-6">
+<span class="font-display font-black text-5xl text-[#00D2FF]">$1,150</span>
+<span class="font-mono text-xs text-[#8A90A6] block uppercase mt-1">USD • Entrega 10-15 días</span>
+</div>
+<ul class="space-y-3 font-body text-xs text-[#E1E4EE] mb-8">
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>4 a 7 páginas estratégicas (Inicio, Servicios, Nosotros, Casos, Contacto)</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>CMS autoadministrable sin necesidad de código</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Score 95+ Core Web Vitals y velocidad extrema</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Google Analytics 4 &amp; Meta Pixel configurados</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>1 año de hosting cloud gestionado + dominio incluido</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Optimización SEO + visibilidad en IA (ChatGPT/Perplexity)</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-3.5 bg-[#0052FF] text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:bg-[#0066FF] hover:shadow-[0_0_30px_rgba(0,82,255,0.7)] transition-all" href="#contacto">
+            QUIERO EL SITIO PRO →
+          </a>
+</div>
+<!-- Tier 3: Enterprise / A la Medida -->
+<div class="p-8 bg-brand-obsidian border border-brand-border flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">KORE / ENTERPRISE</span>
+<span class="font-mono text-xs text-[#8A90A6]">A Medida</span>
+</div>
+<div class="mb-6">
+<span class="font-display font-black text-5xl text-white">Desde $1,890</span>
+<span class="font-mono text-xs text-[#8A90A6] block uppercase mt-1">USD • Cotización Técnica</span>
+</div>
+<ul class="space-y-3 font-body text-xs text-[#C4C9D9] mb-8">
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Plataformas SaaS, portales o tiendas ecommerce avanzadas</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Catálogo ilimitado de productos y pasarelas mundiales</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Integraciones API a medida, webhooks y bases de datos</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>SLA de soporte técnico prioritario 24/7</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-[#00D2FF] font-bold">✓</span>
+<span>Auditoría de ciberseguridad y backups automatizados</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-3 border border-brand-border bg-brand-card text-center font-mono text-xs font-bold uppercase tracking-widest text-white hover:border-[#0052FF] hover:text-[#00D2FF] transition-all" href="#contacto">
+            PEDIR COTIZACIÓN →
+          </a>
+</div>
+</div>
+<!-- Additional E-Commerce strip as in reference ("VENDE EN LÍNEA") -->
+<div class="mt-16 p-8 border border-brand-border bg-brand-obsidian flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<span class="font-mono text-xs text-[#00D2FF] uppercase font-bold tracking-wider">¿BUSCAS TIENDA ONLINE EXCLUSIVA?</span>
+<h3 class="font-display font-black text-2xl uppercase text-white mt-1">E-Commerce &amp; Catálogo Digital de Alta Conversión</h3>
+<p class="text-xs text-[#8A90A6] mt-1 max-w-xl">
+            Desde $1,890 USD con carrito en 1 clic, pasarelas Stripe/MercadoPago y sincronización de inventario en tiempo real.
+          </p>
+</div>
+<a class="px-6 py-3 border border-[#00D2FF] text-[#00D2FF] font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#00D2FF] hover:text-black transition-all shrink-0" href="#contacto">
+          COTIZAR TIENDA →
+        </a>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 05: FULL-WIDTH HIGH-IMPACT CALLOUT BANNER ("¿LISTO PARA DOMINAR?")
+       Adapted to Kore Web Studio: Vivid electric blue (#0052FF) block, dark & white contrast
+       ========================================================================= -->
+<section class="py-20 md:py-28 bg-[#0052FF] text-white relative overflow-hidden">
+<!-- Abstract overlay markings -->
+<div class="absolute right-0 top-0 w-96 h-full bg-[#00D2FF]/20 skew-x-12 pointer-events-none"></div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-[#00D2FF] bg-[#08090C] px-3 py-1 font-bold inline-block mb-4">
+          SIN EXCUSAS • RESULTADOS INMEDIATOS
+        </span>
+<h2 class="font-display font-black text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tight leading-[0.9] text-white">
+          ¿LISTO<br/>
+          PARA CRECER?
+        </h2>
+</div>
+<div class="flex flex-col items-start md:items-end gap-4 max-w-md">
+<p class="text-sm md:text-base text-white/90 leading-relaxed font-medium md:text-right">
+          En menos de 24 horas te enviamos una propuesta técnica clara y sin compromiso.
+        </p>
+<a class="px-8 py-4 bg-[#08090C] text-[#00D2FF] font-mono text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#0052FF] transition-all shadow-xl" href="#contacto">
+          INICIAR MI PROYECTO AHORA →
+        </a>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 06: DOLOR DEL CLIENTE ("LO QUE PIERDES CADA DÍA SIN UN SITIO QUE VENDA")
+       Reference layout: 01, 02, 03 pain points with bold callout
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden">
+<div class="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      05
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5">
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+            [ 05 — LO QUE ESTÁ EN JUEGO ]
+          </span>
+<h2 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white leading-none mb-6">
+            LO QUE PIERDES<br/>
+            CADA DÍA<br/>
+            SIN UN SITIO<br/>
+<span class="text-[#00D2FF]">QUE VENDA</span>
+</h2>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-6 font-normal">
+            Tener una web antigua o no tener presencia optimizada cuesta clientes reales todos los días.
+          </p>
+<a class="inline-flex items-center gap-2 font-mono text-xs text-[#00D2FF] font-bold uppercase tracking-wider underline" href="#contacto">
+            DEJAR DE PERDER CLIENTES →
+          </a>
+</div>
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Pain 01 -->
+<div class="p-6 bg-brand-obsidian border border-brand-border">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-mono text-sm text-[#00D2FF] font-bold">01</span>
+<h4 class="font-display font-bold text-base text-white uppercase">El cliente que te buscó encontró a tu competencia</h4>
+</div>
+<p class="text-xs text-[#8A90A6] leading-relaxed pl-7">
+              Si buscas en Google o en redes y no estás tú —o encuentras un sitio roto y lento— el cliente no va a insistir. Se va con el primero que le genere confianza y respuesta inmediata.
+            </p>
+</div>
+<!-- Pain 02 -->
+<div class="p-6 bg-brand-obsidian border border-brand-border">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-mono text-sm text-[#00D2FF] font-bold">02</span>
+<h4 class="font-display font-bold text-base text-white uppercase">La credibilidad que ya te juzgaron antes de hablar</h4>
+</div>
+<p class="text-xs text-[#8A90A6] leading-relaxed pl-7">
+              El 75% de los compradores evalúan la seriedad de una empresa por su diseño web. Con un sitio viejo o improvisado, te descartan antes de agendar o pedir presupuesto.
+            </p>
+</div>
+<!-- Pain 03 -->
+<div class="p-6 bg-brand-obsidian border border-brand-border">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-mono text-sm text-[#00D2FF] font-bold">03</span>
+<h4 class="font-display font-bold text-base text-white uppercase">Las respuestas de IA donde hoy no existes</h4>
+</div>
+<p class="text-xs text-[#8A90A6] leading-relaxed pl-7">
+              Cerca del 36% de las búsquedas ya terminan en ChatGPT, Claude o Gemini. Si tu negocio no está optimizado con schema semántico y arquitectura moderna, no existes para el algoritmo.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 07: ¿POR QUÉ KORE Y NO OTRA AGENCIA?
+       Split screen with official branding logo https://lh3.googleusercontent.com/aida-public/AB6AXuAh1npJmfKGuV7B_l-n7-b7xONOSfwBAuioDhS9NhUPumStD547OfCZQc_azBec2CWDoVUxJsR0Hk41nMiRAgimALgTb2DXPRiigQNQw5Ue1WdZNKa9Mx330Yw-63WaabzC3Pz45hJVWZ3R6HnxkCjN6H8Umq1hfVedf1Kg-Jdq-dgDM3Gbotn5H0Wy6JSq6lKDA9Ej3u1fsIc2Y-4nfcHd-mMgNvvxqs7o1VZcUD3x3tNnJBCisSrn & credibility stats
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden">
+<div class="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      06
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Column: Official Kore Web Studio Brand Card -->
+<div class="lg:col-span-5 flex flex-col items-center">
+<div class="w-full max-w-[420px] aspect-square bg-[#0C0E14] border border-[#1E2230] p-8 flex flex-col items-center justify-center relative overflow-hidden shadow-[0_0_50px_rgba(0,82,255,0.2)]">
+<div class="absolute -top-16 -right-16 w-48 h-48 bg-[#0052FF]/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-16 -left-16 w-48 h-48 bg-[#00D2FF]/20 rounded-full blur-3xl"></div>
+<img alt="Kore Web Studio Logo Badge" class="w-64 h-64 object-contain relative z-10 drop-shadow-[0_0_25px_rgba(0,82,255,0.5)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh1npJmfKGuV7B_l-n7-b7xONOSfwBAuioDhS9NhUPumStD547OfCZQc_azBec2CWDoVUxJsR0Hk41nMiRAgimALgTb2DXPRiigQNQw5Ue1WdZNKa9Mx330Yw-63WaabzC3Pz45hJVWZ3R6HnxkCjN6H8Umq1hfVedf1Kg-Jdq-dgDM3Gbotn5H0Wy6JSq6lKDA9Ej3u1fsIc2Y-4nfcHd-mMgNvvxqs7o1VZcUD3x3tNnJBCisSrn"/>
+<div class="mt-4 text-center relative z-10">
+<span class="font-mono text-xs text-[#00D2FF] font-bold tracking-widest uppercase">KORE WEB STUDIO • INGENIERÍA DIGITAL</span>
+</div>
+</div>
+<div class="mt-4 text-center">
+<p class="font-mono text-xs text-[#8A90A6]">
+              "Un sitio web no es un gasto decorativo. Es el vendedor más rentable que nunca descansa."
+            </p>
+</div>
+</div>
+<!-- Right Column: Differentiators & Stats as in Reference -->
+<div class="lg:col-span-7">
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+            [ 06 — FILOSOFÍA Y RIGOR ]
+          </span>
+<h2 class="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white leading-none mb-6">
+            POR QUÉ KORE<br/>
+            Y <span class="text-[#00D2FF]">NO OTRA</span><br/>
+            AGENCIA
+          </h2>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-8 font-normal">
+            No somos intermediarios de plantillas prefabricadas. Construimos software web con enfoque obsesivo en velocidad, retorno de inversión y conversión comercial sin ataduras innecesarias.
+          </p>
+<!-- 4 Big Stats Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+<div class="p-4 bg-brand-obsidian border border-brand-border">
+<span class="font-display font-black text-3xl text-white">24h</span>
+<span class="font-mono text-[10px] text-[#8A90A6] block uppercase mt-1">Propuesta técnica detallada</span>
+</div>
+<div class="p-4 bg-brand-obsidian border border-brand-border">
+<span class="font-display font-black text-3xl text-[#00D2FF]">99.9%</span>
+<span class="font-mono text-[10px] text-[#8A90A6] block uppercase mt-1">Uptime garantizado en la nube</span>
+</div>
+<div class="p-4 bg-brand-obsidian border border-brand-border">
+<span class="font-display font-black text-3xl text-white">100%</span>
+<span class="font-mono text-[10px] text-[#8A90A6] block uppercase mt-1">Código propietario limpio</span>
+</div>
+<div class="p-4 bg-brand-obsidian border border-brand-border">
+<span class="font-display font-black text-3xl text-[#00D2FF]">0</span>
+<span class="font-mono text-[10px] text-[#8A90A6] block uppercase mt-1">Plantillas genéricas lentas</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="px-6 py-3.5 bg-[#0052FF] text-white font-mono text-xs font-bold uppercase tracking-widest text-center hover:bg-[#0066FF] transition-all" href="#contacto">
+              INICIAR PROYECTO →
+            </a>
+<a class="px-6 py-3.5 border border-brand-border text-[#C4C9D9] font-mono text-xs font-bold uppercase tracking-widest text-center hover:border-[#00D2FF] hover:text-[#00D2FF] transition-all" href="#contacto">
+              CONOCE A NUESTRO EQUIPO →
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 08: PROCESO CLARO ("SIN SORPRESAS, SIN RODEOS.")
+       Reference layout: 4 transparent numbered steps
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden">
+<div class="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      07
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="mb-16">
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+          [ 07 — METODOLOGÍA ÁGIL ]
+        </span>
+<h2 class="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white leading-none">
+          SIN SORPRESAS,<br/>
+<span class="text-[#00D2FF]">SIN RODEOS.</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="p-6 bg-brand-obsidian border border-brand-border">
+<span class="font-mono text-xs text-[#00D2FF] font-bold block mb-4">/ 01</span>
+<h4 class="font-display font-bold text-base uppercase text-white mb-2">NOS CUENTAS</h4>
+<p class="text-xs text-[#8A90A6] leading-relaxed">
+            Llenas el formulario o coordinamos una videollamada de 15 min. En menos de 24 horas te enviamos una cotización exacta, con tiempos y entregables precisos.
+          </p>
+</div>
+<!-- Step 2 -->
+<div class="p-6 bg-brand-obsidian border border-brand-border">
+<span class="font-mono text-xs text-[#00D2FF] font-bold block mb-4">/ 02</span>
+<h4 class="font-display font-bold text-base uppercase text-white mb-2">APRUEBAS</h4>
+<p class="text-xs text-[#8A90A6] leading-relaxed">
+            Precio cerrado y fecha fija de entrega por escrito. Sin costos ocultos. Iniciamos con 50% de anticipo y el resto contra entrega final.
+          </p>
+</div>
+<!-- Step 3 -->
+<div class="p-6 bg-brand-obsidian border border-brand-border">
+<span class="font-mono text-xs text-[#00D2FF] font-bold block mb-4">/ 03</span>
+<h4 class="font-display font-bold text-base uppercase text-white mb-2">CONSTRUIMOS</h4>
+<p class="text-xs text-[#8A90A6] leading-relaxed">
+            Diseño, desarrollo nativo y copywriting estratégico. Recibes enlaces de prueba y avances periódicos para validar cada sprint de trabajo.
+          </p>
+</div>
+<!-- Step 4 -->
+<div class="p-6 bg-brand-obsidian border border-brand-border">
+<span class="font-mono text-xs text-[#00D2FF] font-bold block mb-4">/ 04</span>
+<h4 class="font-display font-bold text-base uppercase text-white mb-2">VENDES</h4>
+<p class="text-xs text-[#8A90A6] leading-relaxed">
+            Tu sitio sube al aire optimizado en AWS/Vercel. Te capacitamos para gestionar contenidos y recibes soporte continuo para seguir escalando.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 09: FAQ ACCORDION ("LO QUE TODOS PREGUNTAN ANTES DE EMPEZAR")
+       Clean minimalist questions with expand toggles
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden" id="faq">
+<div class="max-w-[1000px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="mb-14 text-center md:text-left">
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+          [ 08 — DUDAS FRECUENTES ]
+        </span>
+<h2 class="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white leading-none">
+          LO QUE TODOS<br/>
+          PREGUNTAN ANTES<br/>
+          DE <span class="text-[#00D2FF]">EMPEZAR</span>
+</h2>
+</div>
+<div class="flex flex-col border-t border-brand-border" id="faq-accordion">
+<!-- FAQ 1 -->
+<div class="border-b border-brand-border">
+<button class="w-full py-6 flex items-center justify-between text-left group" onclick="toggleFaqItem(this)" type="button">
+<span class="font-display font-bold text-base md:text-lg text-white group-hover:text-[#00D2FF] transition-colors">
+              ¿Cuánto cuesta una página web profesional con Kore?
+            </span>
+<span class="faq-icon font-mono text-xl text-[#00D2FF] transition-transform duration-300 ml-4">+</span>
+</button>
+<div class="faq-body hidden pb-6 text-sm text-[#8A90A6] leading-relaxed">
+            Tenemos esquemas directos: Landing Page desde $490 USD con entrega en 5-7 días; Sitio Web Pro por $1,150 USD con múltiples secciones, CMS y hosting anual; y proyectos a la medida o E-Commerce desde $1,890 USD. Sin mensualidades ocultas ni costes sorpresa.
+          </div>
+</div>
+<!-- FAQ 2 -->
+<div class="border-b border-brand-border">
+<button class="w-full py-6 flex items-center justify-between text-left group" onclick="toggleFaqItem(this)" type="button">
+<span class="font-display font-bold text-base md:text-lg text-white group-hover:text-[#00D2FF] transition-colors">
+              ¿En cuánto tiempo entregan el sitio listo para producción?
+            </span>
+<span class="faq-icon font-mono text-xl text-[#00D2FF] transition-transform duration-300 ml-4">+</span>
+</button>
+<div class="faq-body hidden pb-6 text-sm text-[#8A90A6] leading-relaxed">
+            Una Landing Page toma 5 a 7 días hábiles. Un Sitio Web Pro toma entre 10 y 15 días hábiles. Plataformas complejas o tiendas online se entregan típicamente en 3 a 4 semanas con cronograma estricto.
+          </div>
+</div>
+<!-- FAQ 3 -->
+<div class="border-b border-brand-border">
+<button class="w-full py-6 flex items-center justify-between text-left group" onclick="toggleFaqItem(this)" type="button">
+<span class="font-display font-bold text-base md:text-lg text-white group-hover:text-[#00D2FF] transition-colors">
+              ¿Qué incluye el servicio de hosting y dominio administrado?
+            </span>
+<span class="faq-icon font-mono text-xl text-[#00D2FF] transition-transform duration-300 ml-4">+</span>
+</button>
+<div class="faq-body hidden pb-6 text-sm text-[#8A90A6] leading-relaxed">
+            Incluye 1 año de alojamiento en arquitectura cloud de alta velocidad (AWS/Vercel Edge), certificado SSL corporativo, copias de seguridad semanales, monitoreo de ciberseguridad y registro/vinculación de dominio (.com, .io, etc.).
+          </div>
+</div>
+<!-- FAQ 4 -->
+<div class="border-b border-brand-border">
+<button class="w-full py-6 flex items-center justify-between text-left group" onclick="toggleFaqItem(this)" type="button">
+<span class="font-display font-bold text-base md:text-lg text-white group-hover:text-[#00D2FF] transition-colors">
+              ¿Qué es la optimización para IA (ChatGPT, Claude, Perplexity)?
+            </span>
+<span class="faq-icon font-mono text-xl text-[#00D2FF] transition-transform duration-300 ml-4">+</span>
+</button>
+<div class="faq-body hidden pb-6 text-sm text-[#8A90A6] leading-relaxed">
+            Estructuramos tu código con Schema.org, metadatos semánticos y arquitectura de datos JSON-LD para que los motores de IA puedan indexar, citar y recomendar tu negocio como referencia calificada ante preguntas de tus clientes.
+          </div>
+</div>
+<!-- FAQ 5 -->
+<div class="border-b border-brand-border">
+<button class="w-full py-6 flex items-center justify-between text-left group" onclick="toggleFaqItem(this)" type="button">
+<span class="font-display font-bold text-base md:text-lg text-white group-hover:text-[#00D2FF] transition-colors">
+              ¿Por qué es mejor código a la medida que una plantilla de Wix o WordPress?
+            </span>
+<span class="faq-icon font-mono text-xl text-[#00D2FF] transition-transform duration-300 ml-4">+</span>
+</button>
+<div class="faq-body hidden pb-6 text-sm text-[#8A90A6] leading-relaxed">
+            Las plantillas gratuitas o constructores visuales arrastran plugins obsoletos y código pesado que demoran más de 4 segundos en abrir en teléfonos. Con desarrollo nativo obtienes velocidad instantánea (menos de 1s), 100/100 en Google Core Web Vitals y una experiencia única sin limitaciones de diseño.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       SECTION 10: HIGH-CONVERSION CONTACT FORM ("CUÉNTANOS DE TU NEGOCIO. EN 24 H TIENES PROPUESTA.")
+       Reference layout: Split layout with direct inputs & massive vibrant button
+       ========================================================================= -->
+<section class="relative py-24 lg:py-32 border-b border-brand-border overflow-hidden" id="contacto">
+<div class="absolute right-10 top-12 font-display font-black text-[220px] md:text-[340px] text-white/[0.02] select-none pointer-events-none leading-none">
+      09
+    </div>
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Callout and direct contact facts -->
+<div class="lg:col-span-5">
+<span class="font-mono text-xs text-[#00D2FF] uppercase tracking-widest block mb-3 font-semibold">
+            [ 09 — CONTACTO DIRECTO ]
+          </span>
+<h2 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white leading-tight mb-6">
+            CUÉNTANOS<br/>
+            DE TU NEGOCIO.<br/>
+            EN 24 H TIENES<br/>
+<span class="text-[#00D2FF]">PROPUESTA.</span>
+</h2>
+<p class="text-sm text-[#8A90A6] leading-relaxed mb-8">
+            Sin cotizaciones eternas: nos dices qué vendes y a quién, y te enviamos un plan claro con precio exacto y fecha de entrega por escrito. La primera consulta es 100% gratuita.
+          </p>
+<div class="space-y-4 font-mono text-xs text-[#C4C9D9]">
+<div class="flex items-center gap-3">
+<span class="text-[#00D2FF]">EMAIL:</span>
+<span class="text-white">contacto@korewebstudio.com</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[#00D2FF]">WHATSAPP:</span>
+<span class="text-white">+52 55 9100 8761</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[#00D2FF]">HORARIO:</span>
+<span class="text-[#8A90A6]">Lunes a Viernes 09:00 - 19:00 hrs</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-brand-border">
+<span class="font-mono text-[11px] text-[#00D2FF] uppercase tracking-wider block mb-1">● RESPUESTA GARANTIZADA</span>
+<p class="text-xs text-[#8A90A6]">Recibe tu cotización personalizada y checklist técnico en menos de 24 horas hábiles.</p>
+</div>
+</div>
+<!-- Right Column: Minimalist Dark Form -->
+<div class="lg:col-span-7">
+<form class="p-8 bg-brand-obsidian border border-brand-border flex flex-col gap-5 shadow-2xl" onsubmit="event.preventDefault(); alert('¡Gracias por contactar a Kore Web Studio! Nos comunicaremos en breve con tu propuesta técnica.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">Nombre Completo *</label>
+<input class="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors" placeholder="Alexander Ramos" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">Email Corporativo *</label>
+<input class="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors" placeholder="alex@tuempresa.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">WhatsApp / Teléfono</label>
+<input class="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors" placeholder="+52 55 ..." type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">¿Qué servicio necesitas?</label>
+<select class="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00D2FF] transition-colors">
+<option selected="" value="pro">Sitio Web Pro ($1,150 USD)</option>
+<option value="landing">Landing Page ($490 USD)</option>
+<option value="ecommerce">Tienda Ecommerce ($1,890 USD)</option>
+<option value="custom">Desarrollo a la Medida / Enterprise</option>
+<option value="audit">Auditoría Gratuita de mi Sitio Actual</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-mono text-xs text-[#8A90A6] uppercase tracking-wider">¿Qué vendes y qué quieres lograr con tu sitio?</label>
+<textarea class="w-full bg-[#08090C] border border-[#232838] px-4 py-3 text-sm text-white placeholder-[#505770] focus:outline-none focus:border-[#00D2FF] transition-colors resize-none" placeholder="Describe brevemente tu modelo de negocio, clientes objetivo o cualquier requerimiento específico..." rows="4"></textarea>
+</div>
+<button class="w-full mt-2 py-4 bg-[#0052FF] text-white font-mono text-sm font-bold uppercase tracking-widest hover:bg-[#0066FF] hover:shadow-[0_0_35px_rgba(0,82,255,0.7)] transition-all flex items-center justify-center gap-2" type="submit">
+<span>QUIERO MI PROPUESTA</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<p class="font-mono text-[11px] text-[#636B82] text-center mt-1">
+              Respuesta en menos de 24 horas • Confidencialidad y NDA disponible • Sin compromiso
+            </p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       FOOTER (Institutional Kore Web Studio)
+       ========================================================================= -->
+<footer class="bg-[#06070A] py-16 border-t border-brand-border">
+<div class="max-w-[1360px] mx-auto px-5 lg:px-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-brand-border">
+<!-- Brand Info -->
+<div class="md:col-span-5 flex flex-col items-start gap-4">
+<div class="flex items-center gap-3">
+<img alt="Kore Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5nBbo1C100K84p1cCJsadDUzWxnaepr9kW5IbImYVLbtCK_9gXsxNKiXo0o6Z7tPGASHmB_QobyNJrvdafUr7PcSvPJzIM410xkC8V2T0-KVAc7ltDxrQViY3pGwAb4SnpmsKfvCBgGRoKVKIeYcht1w_wVSM4s6HYAmXSOM5tXqIbn1AIU9l_A2_znqrOzewrvwVbPDbqxUXPuqUGv70dNPD5vnADeGvBBU26Alua5tpSaLUOAUN"/>
+<span class="font-display font-black text-xl tracking-tight text-white uppercase">
+              Kore <span class="text-[#00D2FF]">Web Studio</span>
+</span>
+</div>
+<p class="font-mono text-xs text-[#8A90A6] max-w-sm leading-relaxed">
+            Construimos el futuro digital de tu negocio con estándares de ingeniería, alto impacto visual y conversión sin compromisos.
+          </p>
+<div class="flex items-center gap-2 font-mono text-[11px] text-[#00D2FF]">
+<span class="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse"></span>
+<span>Estudio Operativo • Proyectos Abiertos 2025</span>
+</div>
+</div>
+<!-- Links Navigation -->
+<div class="md:col-span-2">
+<h5 class="font-mono text-xs text-white uppercase tracking-widest mb-4 font-bold">Navegación</h5>
+<ul class="space-y-2 text-xs font-mono text-[#8A90A6]">
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#servicios">Servicios</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#proyectos">Portafolio</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#testimonios">Testimonios</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#precios">Precios</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-mono text-xs text-white uppercase tracking-widest mb-4 font-bold">Servicios Core</h5>
+<ul class="space-y-2 text-xs font-mono text-[#8A90A6]">
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#servicios">Desarrollo Web Next.js</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#servicios">Tiendas E-Commerce</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#servicios">UI/UX &amp; Branding Digital</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#servicios">SEO &amp; Optimización de IA</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#servicios">Hosting Cloud &amp; Seguridad</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="font-mono text-xs text-white uppercase tracking-widest mb-4 font-bold">Conectar</h5>
+<ul class="space-y-2 text-xs font-mono text-[#8A90A6]">
+<li><a class="hover:text-[#00D2FF] transition-colors" href="https://github.com" target="_blank">GitHub</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="https://instagram.com" target="_blank">Instagram</a></li>
+<li><a class="hover:text-[#00D2FF] transition-colors" href="#contacto">Contacto</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#636B82]">
+<p>© 2025 Kore Web Studio. Todos los derechos reservados.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-[#00D2FF] transition-colors" href="#">Privacidad &amp; Cookies</a>
+<a class="hover:text-[#00D2FF] transition-colors" href="#">Términos de Servicio</a>
+<a class="hover:text-[#00D2FF] transition-colors" href="#">Hecho con &lt; K &gt;</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAQ Accordion JS Script -->
+<script>
+    function toggleFaqItem(button) {
+      const body = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      const isHidden = body.classList.contains('hidden');
+
+      // Close all other items
+      document.querySelectorAll('.faq-body').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(ic => {
+        ic.textContent = '+';
+        ic.style.transform = 'rotate(0deg)';
+      });
+
+      if (isHidden) {
+        body.classList.remove('hidden');
+        icon.textContent = '—';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        body.classList.add('hidden');
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</body></html>
